@@ -30,5 +30,19 @@ namespace ABM_Backup_System
                 throw;
             }
         }
+
+        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                formLogin formLogin = new formLogin();
+                formLogin.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+        }
     }
 }

@@ -93,6 +93,7 @@
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
             this.loginToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.loginToolStripMenuItem.Text = "Login";
+            this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -134,7 +135,7 @@
             // salesOrderCreditToolStripMenuItem
             // 
             this.salesOrderCreditToolStripMenuItem.Name = "salesOrderCreditToolStripMenuItem";
-            this.salesOrderCreditToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salesOrderCreditToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.salesOrderCreditToolStripMenuItem.Text = "Sales Order / Credit";
             this.salesOrderCreditToolStripMenuItem.Click += new System.EventHandler(this.salesOrderCreditToolStripMenuItem_Click);
             // 
