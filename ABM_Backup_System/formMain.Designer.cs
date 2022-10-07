@@ -238,19 +238,20 @@
             // customerDatabaseToolStripMenuItem
             // 
             this.customerDatabaseToolStripMenuItem.Name = "customerDatabaseToolStripMenuItem";
-            this.customerDatabaseToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.customerDatabaseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.customerDatabaseToolStripMenuItem.Text = "Customer Database";
+            this.customerDatabaseToolStripMenuItem.Click += new System.EventHandler(this.customerDatabaseToolStripMenuItem_Click);
             // 
             // supplierDatabaseToolStripMenuItem
             // 
             this.supplierDatabaseToolStripMenuItem.Name = "supplierDatabaseToolStripMenuItem";
-            this.supplierDatabaseToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.supplierDatabaseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.supplierDatabaseToolStripMenuItem.Text = "Supplier Database";
             // 
             // productDatabaseToolStripMenuItem
             // 
             this.productDatabaseToolStripMenuItem.Name = "productDatabaseToolStripMenuItem";
-            this.productDatabaseToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.productDatabaseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.productDatabaseToolStripMenuItem.Text = "Product Database";
             // 
             // helpToolStripMenuItem
