@@ -58,5 +58,46 @@ namespace ABM_Backup_System
                 throw;
             }
         }
+
+        private void configureWorkstationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                formCustomerDatabase formCustomerDatabase = new formCustomerDatabase();
+                formCustomerDatabase.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+        }
+
+        private void invoiceEnquiryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                formInvoiceEnquiry formInvoiceEnquiry = new formInvoiceEnquiry();
+                formInvoiceEnquiry.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+        }
     }
 }
