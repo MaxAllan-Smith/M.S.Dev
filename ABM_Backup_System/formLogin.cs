@@ -16,5 +16,18 @@ namespace ABM_Backup_System
         {
             InitializeComponent();
         }
+
+        private void toolStripButton_Login_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+        }
     }
 }

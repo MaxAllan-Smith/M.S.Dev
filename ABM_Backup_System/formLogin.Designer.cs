@@ -109,6 +109,7 @@
             this.toolStripButton_Login.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripButton_Login.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton_Login.ToolTipText = "Login";
+            this.toolStripButton_Login.Click += new System.EventHandler(this.toolStripButton_Login_Click);
             // 
             // toolStripButton_Cancel
             // 

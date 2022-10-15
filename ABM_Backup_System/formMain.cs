@@ -13,7 +13,6 @@ namespace ABM_Backup_System
 {
     public partial class formMain : Form
     {
-        Configuration config;
         public formMain()
         {
             InitializeComponent();
