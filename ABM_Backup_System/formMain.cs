@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace ABM_Backup_System
 {
     public partial class formMain : Form
     {
+        Configuration config;
         public formMain()
         {
             InitializeComponent();
@@ -63,8 +65,8 @@ namespace ABM_Backup_System
         {
             try
             {
-                formCustomerDatabase formCustomerDatabase = new formCustomerDatabase();
-                formCustomerDatabase.ShowDialog();
+                formWorkstationConfiguration formWorkstationConfiguration = new formWorkstationConfiguration();
+                formWorkstationConfiguration.ShowDialog();
             }
             catch (Exception ex)
             {

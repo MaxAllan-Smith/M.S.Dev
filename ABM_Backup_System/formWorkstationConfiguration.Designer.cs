@@ -38,8 +38,6 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.label_ServerPath = new System.Windows.Forms.Label();
             this.textBox_ServerPath = new System.Windows.Forms.TextBox();
-            this.label_ServerName = new System.Windows.Forms.Label();
-            this.textBox_ServerName = new System.Windows.Forms.TextBox();
             this.label_DatabaseName = new System.Windows.Forms.Label();
             this.textBox_DatabaseName = new System.Windows.Forms.TextBox();
             this.toolStrip_BottomMenu.SuspendLayout();
@@ -58,7 +56,7 @@
             this.toolStripButton_Sell,
             this.toolStripButton_Cancel,
             this.toolStripSeparator4});
-            this.toolStrip_BottomMenu.Location = new System.Drawing.Point(0, 254);
+            this.toolStrip_BottomMenu.Location = new System.Drawing.Point(0, 221);
             this.toolStrip_BottomMenu.Name = "toolStrip_BottomMenu";
             this.toolStrip_BottomMenu.Size = new System.Drawing.Size(377, 96);
             this.toolStrip_BottomMenu.TabIndex = 22;
@@ -76,6 +74,7 @@
             this.toolStripButton_Exit.Text = "Exit";
             this.toolStripButton_Exit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripButton_Exit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton_Exit.Click += new System.EventHandler(this.toolStripButton_Exit_Click);
             // 
             // toolStripSeparator1
             // 
@@ -112,6 +111,7 @@
             this.toolStripButton_Sell.Text = "Sell";
             this.toolStripButton_Sell.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripButton_Sell.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton_Sell.Click += new System.EventHandler(this.toolStripButton_Sell_Click);
             // 
             // toolStripButton_Cancel
             // 
@@ -125,6 +125,7 @@
             this.toolStripButton_Cancel.Text = "Cancel";
             this.toolStripButton_Cancel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripButton_Cancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton_Cancel.Click += new System.EventHandler(this.toolStripButton_Cancel_Click);
             // 
             // toolStripSeparator4
             // 
@@ -136,9 +137,9 @@
             this.label_ServerPath.AutoSize = true;
             this.label_ServerPath.Location = new System.Drawing.Point(22, 40);
             this.label_ServerPath.Name = "label_ServerPath";
-            this.label_ServerPath.Size = new System.Drawing.Size(82, 17);
+            this.label_ServerPath.Size = new System.Drawing.Size(90, 17);
             this.label_ServerPath.TabIndex = 23;
-            this.label_ServerPath.Text = "Server Path:";
+            this.label_ServerPath.Text = "Server Name:";
             // 
             // textBox_ServerPath
             // 
@@ -147,26 +148,10 @@
             this.textBox_ServerPath.Size = new System.Drawing.Size(329, 25);
             this.textBox_ServerPath.TabIndex = 24;
             // 
-            // label_ServerName
-            // 
-            this.label_ServerName.AutoSize = true;
-            this.label_ServerName.Location = new System.Drawing.Point(22, 98);
-            this.label_ServerName.Name = "label_ServerName";
-            this.label_ServerName.Size = new System.Drawing.Size(90, 17);
-            this.label_ServerName.TabIndex = 25;
-            this.label_ServerName.Text = "Server Name:";
-            // 
-            // textBox_ServerName
-            // 
-            this.textBox_ServerName.Location = new System.Drawing.Point(22, 118);
-            this.textBox_ServerName.Name = "textBox_ServerName";
-            this.textBox_ServerName.Size = new System.Drawing.Size(329, 25);
-            this.textBox_ServerName.TabIndex = 26;
-            // 
             // label_DatabaseName
             // 
             this.label_DatabaseName.AutoSize = true;
-            this.label_DatabaseName.Location = new System.Drawing.Point(22, 156);
+            this.label_DatabaseName.Location = new System.Drawing.Point(22, 114);
             this.label_DatabaseName.Name = "label_DatabaseName";
             this.label_DatabaseName.Size = new System.Drawing.Size(107, 17);
             this.label_DatabaseName.TabIndex = 27;
@@ -174,7 +159,7 @@
             // 
             // textBox_DatabaseName
             // 
-            this.textBox_DatabaseName.Location = new System.Drawing.Point(22, 176);
+            this.textBox_DatabaseName.Location = new System.Drawing.Point(22, 134);
             this.textBox_DatabaseName.Name = "textBox_DatabaseName";
             this.textBox_DatabaseName.Size = new System.Drawing.Size(329, 25);
             this.textBox_DatabaseName.TabIndex = 28;
@@ -183,11 +168,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(377, 350);
+            this.ClientSize = new System.Drawing.Size(377, 317);
             this.Controls.Add(this.textBox_DatabaseName);
             this.Controls.Add(this.label_DatabaseName);
-            this.Controls.Add(this.textBox_ServerName);
-            this.Controls.Add(this.label_ServerName);
             this.Controls.Add(this.textBox_ServerPath);
             this.Controls.Add(this.label_ServerPath);
             this.Controls.Add(this.toolStrip_BottomMenu);
@@ -217,8 +200,6 @@
         private ToolStripSeparator toolStripSeparator4;
         private Label label_ServerPath;
         private TextBox textBox_ServerPath;
-        private Label label_ServerName;
-        private TextBox textBox_ServerName;
         private Label label_DatabaseName;
         private TextBox textBox_DatabaseName;
     }
