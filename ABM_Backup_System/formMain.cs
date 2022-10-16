@@ -100,5 +100,22 @@ namespace ABM_Backup_System
                 throw;
             }
         }
+
+        private void formMain_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                formLogin formLogin = new formLogin();
+                if (formLogin.ShowDialog() == DialogResult.OK)
+                {
+                    formLogin.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+        }
     }
 }

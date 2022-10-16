@@ -141,6 +141,7 @@
             this.textBox_Username.Size = new System.Drawing.Size(273, 25);
             this.textBox_Username.TabIndex = 24;
             this.textBox_Username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_Username.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_Username_KeyDown);
             // 
             // textBox_Password
             // 
@@ -150,6 +151,7 @@
             this.textBox_Password.TabIndex = 26;
             this.textBox_Password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_Password.UseSystemPasswordChar = true;
+            this.textBox_Password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_Password_KeyDown);
             // 
             // label_Password
             // 
@@ -177,6 +179,7 @@
             this.Name = "formLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formLogin_FormClosing);
             this.toolStrip_BottomMenu.ResumeLayout(false);
             this.toolStrip_BottomMenu.PerformLayout();
             this.ResumeLayout(false);
@@ -191,11 +194,11 @@
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripButton toolStripButton_Help;
         private ToolStripSeparator toolStripSeparator2;
-        private ToolStripButton toolStripButton_Login;
         private ToolStripButton toolStripButton_Cancel;
         private Label label_Username;
         private TextBox textBox_Username;
         private TextBox textBox_Password;
         private Label label_Password;
+        private ToolStripButton toolStripButton_Login;
     }
 }

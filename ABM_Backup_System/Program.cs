@@ -1,3 +1,5 @@
+using ABM_Backup_System_Library;
+
 namespace ABM_Backup_System
 {
     internal static class Program
@@ -11,6 +13,7 @@ namespace ABM_Backup_System
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+            GlobalConfig.InitializeConnections(true);
             Application.Run(new formMain());
         }
     }
