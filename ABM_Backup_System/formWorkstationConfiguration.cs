@@ -1,5 +1,7 @@
-﻿using System.Configuration;
+﻿using ABM_Backup_System_Library;
+using System.Configuration;
 using System.Data.SqlClient;
+using System.DirectoryServices.ActiveDirectory;
 using System.Windows.Forms;
 
 namespace ABM_Backup_System
@@ -20,6 +22,19 @@ namespace ABM_Backup_System
         private void UpdateConfig()
         {
             var conString = string.Format("Server={0}; Database={1}; Trusted_Connection=True;", textBox_ServerPath.Text, textBox_DatabaseName.Text);
+
+            try
+            {
+                AppSetting appSetting = new AppSetting();
+                appSetting.SaveConnectionString("Default", conString);
+                MessageBox.Show("Your connection has been successfully saved!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
 
         }
 
@@ -55,6 +70,7 @@ namespace ABM_Backup_System
             {
                 UpdateConfig();
                 ClearForm();
+                DialogResult = DialogResult.OK;
             }
             catch (Exception ex)
             {

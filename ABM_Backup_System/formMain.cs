@@ -108,7 +108,24 @@ namespace ABM_Backup_System
                 formLogin formLogin = new formLogin();
                 if (formLogin.ShowDialog() == DialogResult.OK)
                 {
-                    formLogin.Close();
+                    formLogin.Hide();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+        }
+
+        private void addNewUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                formAddNewUser formAddNewUser = new formAddNewUser();
+                if (formAddNewUser.ShowDialog() == DialogResult.OK)
+                {
+                    formAddNewUser.Close();
                 }
             }
             catch (Exception ex)

@@ -16,7 +16,6 @@ namespace ABM_Backup_System_Library
         {
             if (database)
             {
-                // TODO - Create the SQL Connection
                 SqlConnector sql = new SqlConnector();
                 Connections.Add(sql);
             }

@@ -31,22 +31,25 @@ namespace ABM_Backup_System
         {
             try
             {
-                List<UserModel> user = new List<UserModel>();
-
                 SqlConnector sqlConnector = new SqlConnector();
 
-                user = sqlConnector.GetUser_UsernamePassword(textBox_Username.Text, textBox_Password.Text);
-
-                if (user.Count > 0)
+                if (sqlConnector.IsConnection == true)
                 {
-                    DialogResult = DialogResult.OK;
-                }
-                else
-                {
-                    MessageBox.Show("Invalid Login!", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                    List<UserModel> user = new List<UserModel>();
 
-                ClearForm();
+                    user = sqlConnector.GetUser_UsernamePassword(textBox_Username.Text, textBox_Password.Text);
+
+                    if (user.Count > 0)
+                    {
+                        DialogResult = DialogResult.OK;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid Login!", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    ClearForm();
+                }
             }
             catch (Exception ex)
             {
@@ -91,7 +94,27 @@ namespace ABM_Backup_System
         {
             try
             {
+                if (e.CloseReason == CloseReason.UserClosing)
+                {
+                    Application.Exit();
+                }
+                else
+                {
+                    e.Cancel = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+        }
 
+        private void toolStripButton_Exit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Application.Exit();
             }
             catch (Exception ex)
             {

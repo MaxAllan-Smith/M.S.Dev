@@ -72,6 +72,7 @@
             this.toolStripButton_Exit.Text = "Exit";
             this.toolStripButton_Exit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripButton_Exit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton_Exit.Click += new System.EventHandler(this.toolStripButton_Exit_Click);
             // 
             // toolStripSeparator1
             // 

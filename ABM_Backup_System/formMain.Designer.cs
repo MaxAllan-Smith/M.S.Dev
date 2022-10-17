@@ -59,6 +59,8 @@
             this.aboutBackupSystemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutBackupSystemToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,6 +85,8 @@
             this.toolStripSeparator1,
             this.configureWorkstationToolStripMenuItem,
             this.toolStripSeparator2,
+            this.addNewUserToolStripMenuItem,
+            this.toolStripSeparator9,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
@@ -284,6 +288,18 @@
             this.aboutBackupSystemToolStripMenuItem1.Size = new System.Drawing.Size(190, 22);
             this.aboutBackupSystemToolStripMenuItem1.Text = "About Backup System";
             // 
+            // addNewUserToolStripMenuItem
+            // 
+            this.addNewUserToolStripMenuItem.Name = "addNewUserToolStripMenuItem";
+            this.addNewUserToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.addNewUserToolStripMenuItem.Text = "Add New User";
+            this.addNewUserToolStripMenuItem.Click += new System.EventHandler(this.addNewUserToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator9
+            // 
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            this.toolStripSeparator9.Size = new System.Drawing.Size(191, 6);
+            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -336,5 +352,7 @@
         private ToolStripMenuItem aboutBackupSystemToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator8;
         private ToolStripMenuItem aboutBackupSystemToolStripMenuItem1;
+        private ToolStripMenuItem addNewUserToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator9;
     }
 }

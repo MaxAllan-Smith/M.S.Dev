@@ -10,5 +10,6 @@ namespace ABM_Backup_System_Library.DataAccess
     public interface IDataConnection
     {
         List<UserModel> GetUser_UsernamePassword(string username, string password);
+        UserModel AddNewUser(UserModel model);
     }
 }

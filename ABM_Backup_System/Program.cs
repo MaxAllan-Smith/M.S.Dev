@@ -14,6 +14,17 @@ namespace ABM_Backup_System
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             GlobalConfig.InitializeConnections(true);
+            if (GlobalConfig.CnnString("Default").Length < 1)
+            {
+                formWorkstationConfiguration formWorkstationConfiguration = new formWorkstationConfiguration();
+                if (formWorkstationConfiguration.ShowDialog() == DialogResult.OK)
+                {
+                    formWorkstationConfiguration.Close();
+                    MessageBox.Show("Application Will Now Close!\n\nPlease Restart The Application!", "Application Closing", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Application.Exit();
+                    Environment.Exit(0);
+                }
+            }
             Application.Run(new formMain());
         }
     }
