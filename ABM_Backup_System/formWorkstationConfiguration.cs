@@ -28,7 +28,8 @@ namespace ABM_Backup_System
                 AppSetting appSetting = new AppSetting();
                 appSetting.SaveConnectionString("Default", conString);
                 MessageBox.Show("Your connection has been successfully saved!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                MessageBox.Show("The application will now close!\n\nPlease restart the application!", "Application Closing", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Application.Exit();
             }
             catch (Exception ex)
             {

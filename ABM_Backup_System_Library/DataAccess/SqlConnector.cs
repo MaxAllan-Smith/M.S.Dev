@@ -17,7 +17,7 @@ namespace ABM_Backup_System_Library.DataAccess
         {
             get
             {
-                using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString("Default")))
+                using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
                 {
                     if (connection.State == ConnectionState.Closed)
                     {
@@ -45,6 +45,19 @@ namespace ABM_Backup_System_Library.DataAccess
                 MessageBox.Show("Successfully Added User To Database!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 return model;
+            }
+        }
+
+        public List<UserModel> GetUsers_ID(int id)
+        {
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                var p = new DynamicParameters();
+                p.Add("@id", id);
+
+                var output = connection.Query<UserModel>("spGetUser_Id", p, commandType: CommandType.StoredProcedure).ToList();
+
+                return output;
             }
         }
 

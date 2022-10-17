@@ -26,5 +26,10 @@ namespace ABM_Backup_System_Library.Models
             UserName = userName;
             PassWord = passWord;
         }
+
+        public UserModel(int id)
+        {
+            ID = id;
+        }
     }
 }

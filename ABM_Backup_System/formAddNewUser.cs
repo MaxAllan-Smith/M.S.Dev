@@ -44,6 +44,8 @@ namespace ABM_Backup_System
             SqlConnector sqlConnector = new SqlConnector();
             sqlConnector.AddNewUser(model);
 
+            DialogResult = DialogResult.OK;
+
             ClearForm();
         }
     }
