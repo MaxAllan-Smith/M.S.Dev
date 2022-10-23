@@ -290,6 +290,7 @@
             this.Name = "formAddNewUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add New User";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formAddNewUser_FormClosing);
             this.toolStrip_BottomMenu.ResumeLayout(false);
             this.toolStrip_BottomMenu.PerformLayout();
             this.ResumeLayout(false);

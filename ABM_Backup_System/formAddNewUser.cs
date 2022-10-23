@@ -48,5 +48,13 @@ namespace ABM_Backup_System
 
             ClearForm();
         }
+
+        private void formAddNewUser_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult = DialogResult.Cancel;
+            }
+        }
     }
 }

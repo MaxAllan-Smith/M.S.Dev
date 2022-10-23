@@ -33,7 +33,7 @@ namespace ABM_Backup_System
             {
                 SqlConnector sqlConnector = new SqlConnector();
 
-                if (sqlConnector.IsConnection == true)
+                if (sqlConnector.IsConnection())
                 {
                     List<UserModel> user = new List<UserModel>();
 

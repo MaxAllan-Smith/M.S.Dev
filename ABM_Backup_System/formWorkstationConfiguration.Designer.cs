@@ -108,9 +108,10 @@
             this.toolStripButton_Sell.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton_Sell.Name = "toolStripButton_Sell";
             this.toolStripButton_Sell.Size = new System.Drawing.Size(50, 61);
-            this.toolStripButton_Sell.Text = "Sell";
+            this.toolStripButton_Sell.Text = "OK";
             this.toolStripButton_Sell.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripButton_Sell.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton_Sell.ToolTipText = "Save Configuration";
             this.toolStripButton_Sell.Click += new System.EventHandler(this.toolStripButton_Sell_Click);
             // 
             // toolStripButton_Cancel

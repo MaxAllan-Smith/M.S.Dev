@@ -13,19 +13,24 @@ namespace ABM_Backup_System_Library.DataAccess
     public class SqlConnector : IDataConnection
     {
         private string db = "Default";
-        public bool IsConnection
+        public bool IsConnection()
         {
-            get
+            bool output;
+
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
             {
-                using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
+                if (connection.State == ConnectionState.Closed)
                 {
-                    if (connection.State == ConnectionState.Closed)
-                    {
-                        connection.Open();
-                    }
+                    connection.Open();
+                    output = true;
                 }
-                return true;
+                else
+                {
+                    output = false;
+                }
             }
+
+            return output;
         }
 
         public UserModel AddNewUser(UserModel model)
@@ -48,19 +53,6 @@ namespace ABM_Backup_System_Library.DataAccess
             }
         }
 
-        public List<UserModel> GetUsers_ID(int id)
-        {
-            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
-            {
-                var p = new DynamicParameters();
-                p.Add("@id", id);
-
-                var output = connection.Query<UserModel>("spGetUser_Id", p, commandType: CommandType.StoredProcedure).ToList();
-
-                return output;
-            }
-        }
-
         public List<UserModel> GetUser_UsernamePassword(string username, string password)
         {
             using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
@@ -70,6 +62,16 @@ namespace ABM_Backup_System_Library.DataAccess
                 p.Add("@passWord", password);
 
                 var output = connection.Query<UserModel>("spGetUser", p, commandType: CommandType.StoredProcedure).ToList();
+
+                return output;
+            }
+        }
+
+        public List<UserModel> UserExist()
+        {
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                var output = connection.Query<UserModel>("spUserExist", commandType: CommandType.StoredProcedure).ToList();
 
                 return output;
             }

@@ -19,20 +19,20 @@ namespace ABM_Backup_System
             SqlConnector sqlConnector = new SqlConnector();
 
             GlobalConfig.InitializeConnections(true);
-            
-            if (GlobalConfig.CnnString("Default") == "")
+
+            try
             {
-                formWorkstationConfiguration formWorkstationConfiguration = new formWorkstationConfiguration();
-                if (formWorkstationConfiguration.ShowDialog() == DialogResult.OK)
+                if (GlobalConfig.CnnString("Default") == "")
                 {
-                    formWorkstationConfiguration.Close();
+                    formWorkstationConfiguration formWorkstationConfiguration = new formWorkstationConfiguration();
+                    if (formWorkstationConfiguration.ShowDialog() == DialogResult.OK)
+                    {
+                        formWorkstationConfiguration.Close();
+                        return;
+                    }
                 }
-            }
-            else
-            {
-                List<UserModel> model = new List<UserModel>();
-                model = sqlConnector.GetUsers_ID(1);
-                if (model.Count == 0)
+
+                if (sqlConnector.UserExist().Count == 0)
                 {
                     formAddNewUser formAddNewUser = new formAddNewUser();
                     if (formAddNewUser.ShowDialog() == DialogResult.OK)
@@ -41,8 +41,15 @@ namespace ABM_Backup_System
                     }
                 }
             }
-
-            Application.Run(new formMain());
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+            finally
+            {
+                Application.Run(new formMain());
+            }
         }
     }
 }
