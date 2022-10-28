@@ -84,6 +84,7 @@
             this.toolStripButton_Exit.Text = "Exit";
             this.toolStripButton_Exit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripButton_Exit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton_Exit.Click += new System.EventHandler(this.toolStripButton_Exit_Click);
             // 
             // toolStripSeparator1
             // 
@@ -135,6 +136,7 @@
             this.toolStripButton_Cancel.Text = "Cancel";
             this.toolStripButton_Cancel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripButton_Cancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton_Cancel.Click += new System.EventHandler(this.toolStripButton_Cancel_Click);
             // 
             // toolStripSeparator4
             // 

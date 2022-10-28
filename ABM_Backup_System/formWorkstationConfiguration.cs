@@ -22,7 +22,7 @@ namespace ABM_Backup_System
 
         private void UpdateConfig()
         {
-            var conString = string.Format("Server={0}; Database={1}; Trusted_Connection=True;", textBox_ServerPath.Text, textBox_DatabaseName.Text);
+            var conString = string.Format("Server={0}; Database={1}; User Id=sa; Password=;", textBox_ServerPath.Text, textBox_DatabaseName.Text);
 
             try
             {

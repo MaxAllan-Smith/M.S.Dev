@@ -20,7 +20,7 @@ namespace ABM_Backup_System
             InitializeComponent();
         }
 
-        private void ClearForm()
+        private void ClearFormNew()
         {
             foreach (Control ctrl in this.Controls)
             {
@@ -46,14 +46,37 @@ namespace ABM_Backup_System
 
             DialogResult = DialogResult.OK;
 
-            ClearForm();
+            ClearFormNew();
         }
 
         private void formAddNewUser_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (e.CloseReason == CloseReason.UserClosing)
+            
+        }
+
+        private void toolStripButton_Exit_Click(object sender, EventArgs e)
+        {
+            try
             {
-                DialogResult = DialogResult.Cancel;
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+        }
+
+        private void toolStripButton_Cancel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ClearFormNew();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
             }
         }
     }

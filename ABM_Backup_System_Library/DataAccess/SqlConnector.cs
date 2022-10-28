@@ -76,5 +76,36 @@ namespace ABM_Backup_System_Library.DataAccess
                 return output;
             }
         }
+
+        public CustomerModel AddNewCustomer(CustomerModel model)
+        {
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                var p = new DynamicParameters();
+
+                p.Add("@accountNumber", model.AccountNumber);
+                p.Add("@companyName", model.CompanyName);
+                p.Add("@salesAddress1", model.SalesAddress1);
+                p.Add("@salesAddress2", model.SalesAddress2);
+                p.Add("@salesAddress3", model.SalesAddress3);
+                p.Add("@salesAddress4", model.SalesAddress4);
+                p.Add("@salesAddress5", model.SalesAddress5);
+                p.Add("@postCode", model.PostCode);
+                p.Add("@salesContact", model.SalesContact);
+                p.Add("@salesPhoneNumber", model.SalesPhoneNumber);
+                p.Add("@salesFaxNumber", model.SalesFaxNumber);
+                p.Add("@salesEmailAddress", model.SalesEmailAddress);
+                p.Add("@accountsContact", model.AccountsContact);
+                p.Add("@accountsPhoneNumber", model.AccountsPhoneNumber);
+                p.Add("@accountsFaxNumber", model.AccountsFaxNumber);
+                p.Add("@accountsEmailAddress", model.AccountsEmailAddess);
+
+                connection.Execute("spAddNewCustomer", p, commandType: CommandType.StoredProcedure);
+
+                MessageBox.Show("New Customer Successfully Added To The Database!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return model;
+            }
+        }
     }
 }

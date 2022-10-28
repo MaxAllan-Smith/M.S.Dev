@@ -12,5 +12,6 @@ namespace ABM_Backup_System_Library.DataAccess
         List<UserModel> GetUser_UsernamePassword(string username, string password);
         UserModel AddNewUser(UserModel model);
         List<UserModel> UserExist();
+        CustomerModel AddNewCustomer(CustomerModel model);
     }
 }

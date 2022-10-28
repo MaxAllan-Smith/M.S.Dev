@@ -38,6 +38,8 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage_CustomerDetails = new System.Windows.Forms.TabPage();
+            this.comboBox_Country = new System.Windows.Forms.ComboBox();
+            this.label_Country = new System.Windows.Forms.Label();
             this.textBox_AccountMobileNumber = new System.Windows.Forms.TextBox();
             this.label_AccountMobileNumber = new System.Windows.Forms.Label();
             this.textBox_AccountEmaillAddress = new System.Windows.Forms.TextBox();
@@ -69,6 +71,14 @@
             this.textBox_AccountNumber = new System.Windows.Forms.TextBox();
             this.label_AccountNumber = new System.Windows.Forms.Label();
             this.tabPage_FinancialInformation = new System.Windows.Forms.TabPage();
+            this.textBox_BankSortCode = new System.Windows.Forms.TextBox();
+            this.label_BankSortCode = new System.Windows.Forms.Label();
+            this.textBox_BankAccountNumber = new System.Windows.Forms.TextBox();
+            this.label_BankAccountNumber = new System.Windows.Forms.Label();
+            this.textBox_BankName = new System.Windows.Forms.TextBox();
+            this.label_BankName = new System.Windows.Forms.Label();
+            this.textBox_CreditLimit = new System.Windows.Forms.TextBox();
+            this.label_CreditLimit = new System.Windows.Forms.Label();
             this.comboBox_VATCode = new System.Windows.Forms.ComboBox();
             this.label_VATCode = new System.Windows.Forms.Label();
             this.comboBox_Currency = new System.Windows.Forms.ComboBox();
@@ -82,21 +92,11 @@
             this.comboBox_SalesType = new System.Windows.Forms.ComboBox();
             this.label_SalesType = new System.Windows.Forms.Label();
             this.tabPage_Notes = new System.Windows.Forms.TabPage();
-            this.tabPageAdditionalInformation = new System.Windows.Forms.TabPage();
-            this.label_CreditLimit = new System.Windows.Forms.Label();
-            this.textBox_CreditLimit = new System.Windows.Forms.TextBox();
-            this.label_Country = new System.Windows.Forms.Label();
-            this.comboBox_Country = new System.Windows.Forms.ComboBox();
-            this.label_BankName = new System.Windows.Forms.Label();
-            this.textBox_BankName = new System.Windows.Forms.TextBox();
-            this.label_BankAccountNumber = new System.Windows.Forms.Label();
-            this.textBox_BankAccountNumber = new System.Windows.Forms.TextBox();
-            this.label_BankSortCode = new System.Windows.Forms.Label();
-            this.textBox_BankSortCode = new System.Windows.Forms.TextBox();
-            this.label_SeelingScreenNote = new System.Windows.Forms.Label();
-            this.textBox_SellingScreenNote = new System.Windows.Forms.TextBox();
-            this.label_InvoiceMessageNote = new System.Windows.Forms.Label();
             this.textBox_InvoiceMessageNote = new System.Windows.Forms.TextBox();
+            this.label_InvoiceMessageNote = new System.Windows.Forms.Label();
+            this.textBox_SellingScreenNote = new System.Windows.Forms.TextBox();
+            this.label_SeelingScreenNote = new System.Windows.Forms.Label();
+            this.tabPageAdditionalInformation = new System.Windows.Forms.TabPage();
             this.toolStrip_BottomMenu.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage_CustomerDetails.SuspendLayout();
@@ -135,6 +135,7 @@
             this.toolStripButton_Exit.Text = "Exit";
             this.toolStripButton_Exit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripButton_Exit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton_Exit.Click += new System.EventHandler(this.toolStripButton_Exit_Click);
             // 
             // toolStripSeparator1
             // 
@@ -171,6 +172,7 @@
             this.toolStripButton_OK.Text = "OK";
             this.toolStripButton_OK.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripButton_OK.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton_OK.Click += new System.EventHandler(this.toolStripButton_OK_Click);
             // 
             // toolStripButton_Cancel
             // 
@@ -184,6 +186,7 @@
             this.toolStripButton_Cancel.Text = "Cancel";
             this.toolStripButton_Cancel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripButton_Cancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton_Cancel.Click += new System.EventHandler(this.toolStripButton_Cancel_Click);
             // 
             // toolStripSeparator4
             // 
@@ -247,6 +250,23 @@
             this.tabPage_CustomerDetails.Size = new System.Drawing.Size(888, 461);
             this.tabPage_CustomerDetails.TabIndex = 0;
             this.tabPage_CustomerDetails.Text = "Customer Details";
+            // 
+            // comboBox_Country
+            // 
+            this.comboBox_Country.FormattingEnabled = true;
+            this.comboBox_Country.Location = new System.Drawing.Point(582, 366);
+            this.comboBox_Country.Name = "comboBox_Country";
+            this.comboBox_Country.Size = new System.Drawing.Size(251, 25);
+            this.comboBox_Country.TabIndex = 26;
+            // 
+            // label_Country
+            // 
+            this.label_Country.AutoSize = true;
+            this.label_Country.Location = new System.Drawing.Point(582, 346);
+            this.label_Country.Name = "label_Country";
+            this.label_Country.Size = new System.Drawing.Size(61, 17);
+            this.label_Country.TabIndex = 25;
+            this.label_Country.Text = "Country:";
             // 
             // textBox_AccountMobileNumber
             // 
@@ -521,6 +541,71 @@
             this.tabPage_FinancialInformation.TabIndex = 1;
             this.tabPage_FinancialInformation.Text = "Financial Information";
             // 
+            // textBox_BankSortCode
+            // 
+            this.textBox_BankSortCode.Location = new System.Drawing.Point(590, 188);
+            this.textBox_BankSortCode.Name = "textBox_BankSortCode";
+            this.textBox_BankSortCode.Size = new System.Drawing.Size(222, 25);
+            this.textBox_BankSortCode.TabIndex = 19;
+            // 
+            // label_BankSortCode
+            // 
+            this.label_BankSortCode.AutoSize = true;
+            this.label_BankSortCode.Location = new System.Drawing.Point(590, 168);
+            this.label_BankSortCode.Name = "label_BankSortCode";
+            this.label_BankSortCode.Size = new System.Drawing.Size(71, 17);
+            this.label_BankSortCode.TabIndex = 18;
+            this.label_BankSortCode.Text = "Sort Code:";
+            // 
+            // textBox_BankAccountNumber
+            // 
+            this.textBox_BankAccountNumber.Location = new System.Drawing.Point(590, 130);
+            this.textBox_BankAccountNumber.Name = "textBox_BankAccountNumber";
+            this.textBox_BankAccountNumber.Size = new System.Drawing.Size(222, 25);
+            this.textBox_BankAccountNumber.TabIndex = 17;
+            // 
+            // label_BankAccountNumber
+            // 
+            this.label_BankAccountNumber.AutoSize = true;
+            this.label_BankAccountNumber.Location = new System.Drawing.Point(590, 110);
+            this.label_BankAccountNumber.Name = "label_BankAccountNumber";
+            this.label_BankAccountNumber.Size = new System.Drawing.Size(150, 17);
+            this.label_BankAccountNumber.TabIndex = 16;
+            this.label_BankAccountNumber.Text = "Bank Account Number:";
+            // 
+            // textBox_BankName
+            // 
+            this.textBox_BankName.Location = new System.Drawing.Point(590, 72);
+            this.textBox_BankName.Name = "textBox_BankName";
+            this.textBox_BankName.Size = new System.Drawing.Size(222, 25);
+            this.textBox_BankName.TabIndex = 15;
+            // 
+            // label_BankName
+            // 
+            this.label_BankName.AutoSize = true;
+            this.label_BankName.Location = new System.Drawing.Point(590, 52);
+            this.label_BankName.Name = "label_BankName";
+            this.label_BankName.Size = new System.Drawing.Size(81, 17);
+            this.label_BankName.TabIndex = 14;
+            this.label_BankName.Text = "Bank Name:";
+            // 
+            // textBox_CreditLimit
+            // 
+            this.textBox_CreditLimit.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBox_CreditLimit.Location = new System.Drawing.Point(33, 274);
+            this.textBox_CreditLimit.Name = "textBox_CreditLimit";
+            this.textBox_CreditLimit.Size = new System.Drawing.Size(187, 25);
+            this.textBox_CreditLimit.TabIndex = 13;
+            // 
+            // label_CreditLimit
+            // 
+            this.label_CreditLimit.AutoSize = true;
+            this.label_CreditLimit.Location = new System.Drawing.Point(33, 254);
+            this.label_CreditLimit.Name = "label_CreditLimit";
+            this.label_CreditLimit.Size = new System.Drawing.Size(80, 17);
+            this.label_CreditLimit.TabIndex = 12;
+            this.label_CreditLimit.Text = "Credit Limit:";
+            // 
             // comboBox_VATCode
             // 
             this.comboBox_VATCode.FormattingEnabled = true;
@@ -637,114 +722,13 @@
             this.tabPage_Notes.TabIndex = 2;
             this.tabPage_Notes.Text = "Notes";
             // 
-            // tabPageAdditionalInformation
+            // textBox_InvoiceMessageNote
             // 
-            this.tabPageAdditionalInformation.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPageAdditionalInformation.Location = new System.Drawing.Point(4, 34);
-            this.tabPageAdditionalInformation.Name = "tabPageAdditionalInformation";
-            this.tabPageAdditionalInformation.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAdditionalInformation.Size = new System.Drawing.Size(888, 461);
-            this.tabPageAdditionalInformation.TabIndex = 3;
-            this.tabPageAdditionalInformation.Text = "Additional Information";
-            // 
-            // label_CreditLimit
-            // 
-            this.label_CreditLimit.AutoSize = true;
-            this.label_CreditLimit.Location = new System.Drawing.Point(33, 254);
-            this.label_CreditLimit.Name = "label_CreditLimit";
-            this.label_CreditLimit.Size = new System.Drawing.Size(80, 17);
-            this.label_CreditLimit.TabIndex = 12;
-            this.label_CreditLimit.Text = "Credit Limit:";
-            // 
-            // textBox_CreditLimit
-            // 
-            this.textBox_CreditLimit.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox_CreditLimit.Location = new System.Drawing.Point(33, 274);
-            this.textBox_CreditLimit.Name = "textBox_CreditLimit";
-            this.textBox_CreditLimit.Size = new System.Drawing.Size(187, 25);
-            this.textBox_CreditLimit.TabIndex = 13;
-            // 
-            // label_Country
-            // 
-            this.label_Country.AutoSize = true;
-            this.label_Country.Location = new System.Drawing.Point(582, 346);
-            this.label_Country.Name = "label_Country";
-            this.label_Country.Size = new System.Drawing.Size(61, 17);
-            this.label_Country.TabIndex = 25;
-            this.label_Country.Text = "Country:";
-            // 
-            // comboBox_Country
-            // 
-            this.comboBox_Country.FormattingEnabled = true;
-            this.comboBox_Country.Location = new System.Drawing.Point(582, 366);
-            this.comboBox_Country.Name = "comboBox_Country";
-            this.comboBox_Country.Size = new System.Drawing.Size(251, 25);
-            this.comboBox_Country.TabIndex = 26;
-            // 
-            // label_BankName
-            // 
-            this.label_BankName.AutoSize = true;
-            this.label_BankName.Location = new System.Drawing.Point(590, 52);
-            this.label_BankName.Name = "label_BankName";
-            this.label_BankName.Size = new System.Drawing.Size(81, 17);
-            this.label_BankName.TabIndex = 14;
-            this.label_BankName.Text = "Bank Name:";
-            // 
-            // textBox_BankName
-            // 
-            this.textBox_BankName.Location = new System.Drawing.Point(590, 72);
-            this.textBox_BankName.Name = "textBox_BankName";
-            this.textBox_BankName.Size = new System.Drawing.Size(222, 25);
-            this.textBox_BankName.TabIndex = 15;
-            // 
-            // label_BankAccountNumber
-            // 
-            this.label_BankAccountNumber.AutoSize = true;
-            this.label_BankAccountNumber.Location = new System.Drawing.Point(590, 110);
-            this.label_BankAccountNumber.Name = "label_BankAccountNumber";
-            this.label_BankAccountNumber.Size = new System.Drawing.Size(150, 17);
-            this.label_BankAccountNumber.TabIndex = 16;
-            this.label_BankAccountNumber.Text = "Bank Account Number:";
-            // 
-            // textBox_BankAccountNumber
-            // 
-            this.textBox_BankAccountNumber.Location = new System.Drawing.Point(590, 130);
-            this.textBox_BankAccountNumber.Name = "textBox_BankAccountNumber";
-            this.textBox_BankAccountNumber.Size = new System.Drawing.Size(222, 25);
-            this.textBox_BankAccountNumber.TabIndex = 17;
-            // 
-            // label_BankSortCode
-            // 
-            this.label_BankSortCode.AutoSize = true;
-            this.label_BankSortCode.Location = new System.Drawing.Point(590, 168);
-            this.label_BankSortCode.Name = "label_BankSortCode";
-            this.label_BankSortCode.Size = new System.Drawing.Size(71, 17);
-            this.label_BankSortCode.TabIndex = 18;
-            this.label_BankSortCode.Text = "Sort Code:";
-            // 
-            // textBox_BankSortCode
-            // 
-            this.textBox_BankSortCode.Location = new System.Drawing.Point(590, 188);
-            this.textBox_BankSortCode.Name = "textBox_BankSortCode";
-            this.textBox_BankSortCode.Size = new System.Drawing.Size(222, 25);
-            this.textBox_BankSortCode.TabIndex = 19;
-            // 
-            // label_SeelingScreenNote
-            // 
-            this.label_SeelingScreenNote.AutoSize = true;
-            this.label_SeelingScreenNote.Location = new System.Drawing.Point(33, 27);
-            this.label_SeelingScreenNote.Name = "label_SeelingScreenNote";
-            this.label_SeelingScreenNote.Size = new System.Drawing.Size(128, 17);
-            this.label_SeelingScreenNote.TabIndex = 0;
-            this.label_SeelingScreenNote.Text = "Selling Screen Note:";
-            // 
-            // textBox_SellingScreenNote
-            // 
-            this.textBox_SellingScreenNote.Location = new System.Drawing.Point(33, 47);
-            this.textBox_SellingScreenNote.Multiline = true;
-            this.textBox_SellingScreenNote.Name = "textBox_SellingScreenNote";
-            this.textBox_SellingScreenNote.Size = new System.Drawing.Size(821, 161);
-            this.textBox_SellingScreenNote.TabIndex = 1;
+            this.textBox_InvoiceMessageNote.Location = new System.Drawing.Point(33, 241);
+            this.textBox_InvoiceMessageNote.Multiline = true;
+            this.textBox_InvoiceMessageNote.Name = "textBox_InvoiceMessageNote";
+            this.textBox_InvoiceMessageNote.Size = new System.Drawing.Size(821, 161);
+            this.textBox_InvoiceMessageNote.TabIndex = 3;
             // 
             // label_InvoiceMessageNote
             // 
@@ -755,13 +739,32 @@
             this.label_InvoiceMessageNote.TabIndex = 2;
             this.label_InvoiceMessageNote.Text = "Invoice Message:";
             // 
-            // textBox_InvoiceMessageNote
+            // textBox_SellingScreenNote
             // 
-            this.textBox_InvoiceMessageNote.Location = new System.Drawing.Point(33, 241);
-            this.textBox_InvoiceMessageNote.Multiline = true;
-            this.textBox_InvoiceMessageNote.Name = "textBox_InvoiceMessageNote";
-            this.textBox_InvoiceMessageNote.Size = new System.Drawing.Size(821, 161);
-            this.textBox_InvoiceMessageNote.TabIndex = 3;
+            this.textBox_SellingScreenNote.Location = new System.Drawing.Point(33, 47);
+            this.textBox_SellingScreenNote.Multiline = true;
+            this.textBox_SellingScreenNote.Name = "textBox_SellingScreenNote";
+            this.textBox_SellingScreenNote.Size = new System.Drawing.Size(821, 161);
+            this.textBox_SellingScreenNote.TabIndex = 1;
+            // 
+            // label_SeelingScreenNote
+            // 
+            this.label_SeelingScreenNote.AutoSize = true;
+            this.label_SeelingScreenNote.Location = new System.Drawing.Point(33, 27);
+            this.label_SeelingScreenNote.Name = "label_SeelingScreenNote";
+            this.label_SeelingScreenNote.Size = new System.Drawing.Size(128, 17);
+            this.label_SeelingScreenNote.TabIndex = 0;
+            this.label_SeelingScreenNote.Text = "Selling Screen Note:";
+            // 
+            // tabPageAdditionalInformation
+            // 
+            this.tabPageAdditionalInformation.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPageAdditionalInformation.Location = new System.Drawing.Point(4, 34);
+            this.tabPageAdditionalInformation.Name = "tabPageAdditionalInformation";
+            this.tabPageAdditionalInformation.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageAdditionalInformation.Size = new System.Drawing.Size(888, 461);
+            this.tabPageAdditionalInformation.TabIndex = 3;
+            this.tabPageAdditionalInformation.Text = "Additional Information";
             // 
             // formCustomerDatabase
             // 
