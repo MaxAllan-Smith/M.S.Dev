@@ -34,6 +34,8 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.configureWorkstationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.addNewUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salesOrderCreditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,8 +61,8 @@
             this.aboutBackupSystemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutBackupSystemToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.addNewUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+            this.systemConfigurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -115,6 +117,18 @@
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(191, 6);
+            // 
+            // addNewUserToolStripMenuItem
+            // 
+            this.addNewUserToolStripMenuItem.Name = "addNewUserToolStripMenuItem";
+            this.addNewUserToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.addNewUserToolStripMenuItem.Text = "Add New User";
+            this.addNewUserToolStripMenuItem.Click += new System.EventHandler(this.addNewUserToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator9
+            // 
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            this.toolStripSeparator9.Size = new System.Drawing.Size(191, 6);
             // 
             // exitToolStripMenuItem
             // 
@@ -237,7 +251,9 @@
             this.databaseToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.customerDatabaseToolStripMenuItem,
             this.supplierDatabaseToolStripMenuItem,
-            this.productDatabaseToolStripMenuItem});
+            this.productDatabaseToolStripMenuItem,
+            this.toolStripSeparator10,
+            this.systemConfigurationToolStripMenuItem});
             this.databaseToolStripMenuItem.Name = "databaseToolStripMenuItem";
             this.databaseToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.databaseToolStripMenuItem.Text = "Database";
@@ -245,20 +261,20 @@
             // customerDatabaseToolStripMenuItem
             // 
             this.customerDatabaseToolStripMenuItem.Name = "customerDatabaseToolStripMenuItem";
-            this.customerDatabaseToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.customerDatabaseToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.customerDatabaseToolStripMenuItem.Text = "Customer Database";
             this.customerDatabaseToolStripMenuItem.Click += new System.EventHandler(this.customerDatabaseToolStripMenuItem_Click);
             // 
             // supplierDatabaseToolStripMenuItem
             // 
             this.supplierDatabaseToolStripMenuItem.Name = "supplierDatabaseToolStripMenuItem";
-            this.supplierDatabaseToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.supplierDatabaseToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.supplierDatabaseToolStripMenuItem.Text = "Supplier Database";
             // 
             // productDatabaseToolStripMenuItem
             // 
             this.productDatabaseToolStripMenuItem.Name = "productDatabaseToolStripMenuItem";
-            this.productDatabaseToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.productDatabaseToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.productDatabaseToolStripMenuItem.Text = "Product Database";
             // 
             // helpToolStripMenuItem
@@ -288,17 +304,16 @@
             this.aboutBackupSystemToolStripMenuItem1.Size = new System.Drawing.Size(190, 22);
             this.aboutBackupSystemToolStripMenuItem1.Text = "About Backup System";
             // 
-            // addNewUserToolStripMenuItem
+            // toolStripSeparator10
             // 
-            this.addNewUserToolStripMenuItem.Name = "addNewUserToolStripMenuItem";
-            this.addNewUserToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.addNewUserToolStripMenuItem.Text = "Add New User";
-            this.addNewUserToolStripMenuItem.Click += new System.EventHandler(this.addNewUserToolStripMenuItem_Click);
+            this.toolStripSeparator10.Name = "toolStripSeparator10";
+            this.toolStripSeparator10.Size = new System.Drawing.Size(186, 6);
             // 
-            // toolStripSeparator9
+            // systemConfigurationToolStripMenuItem
             // 
-            this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(191, 6);
+            this.systemConfigurationToolStripMenuItem.Name = "systemConfigurationToolStripMenuItem";
+            this.systemConfigurationToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.systemConfigurationToolStripMenuItem.Text = "System Configuration";
             // 
             // formMain
             // 
@@ -354,5 +369,7 @@
         private ToolStripMenuItem aboutBackupSystemToolStripMenuItem1;
         private ToolStripMenuItem addNewUserToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator9;
+        private ToolStripSeparator toolStripSeparator10;
+        private ToolStripMenuItem systemConfigurationToolStripMenuItem;
     }
 }

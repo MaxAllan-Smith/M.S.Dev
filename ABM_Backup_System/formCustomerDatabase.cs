@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -128,6 +129,24 @@ namespace ABM_Backup_System
                 MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
             }
+        }
+
+        private void comboBox_Country_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage_CustomerDetails_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void formCustomerDatabase_Load(object sender, EventArgs e)
+        {
+            //Populates ComboBox with contries
+            var list = CultureInfo.GetCultures(CultureTypes.SpecificCultures).Select(p => new RegionInfo(p.Name).EnglishName).Distinct().OrderBy(s => s).ToList();
+            comboBox_Country.DataSource = list;
+            comboBox_Country.Text = "United Kingdom";
         }
     }
 }

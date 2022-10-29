@@ -36,6 +36,7 @@
             this.toolStripButton_OK = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton_Cancel = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton_Previous = new System.Windows.Forms.ToolStripButton();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage_CustomerDetails = new System.Windows.Forms.TabPage();
             this.comboBox_Country = new System.Windows.Forms.ComboBox();
@@ -97,6 +98,7 @@
             this.textBox_SellingScreenNote = new System.Windows.Forms.TextBox();
             this.label_SeelingScreenNote = new System.Windows.Forms.Label();
             this.tabPageAdditionalInformation = new System.Windows.Forms.TabPage();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip_BottomMenu.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage_CustomerDetails.SuspendLayout();
@@ -116,7 +118,9 @@
             this.toolStripSeparator2,
             this.toolStripButton_OK,
             this.toolStripButton_Cancel,
-            this.toolStripSeparator4});
+            this.toolStripSeparator4,
+            this.toolStripButton_Previous,
+            this.toolStripButton1});
             this.toolStrip_BottomMenu.Location = new System.Drawing.Point(9, 508);
             this.toolStrip_BottomMenu.Name = "toolStrip_BottomMenu";
             this.toolStrip_BottomMenu.Size = new System.Drawing.Size(896, 82);
@@ -193,6 +197,19 @@
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 82);
             // 
+            // toolStripButton_Previous
+            // 
+            this.toolStripButton_Previous.AutoSize = false;
+            this.toolStripButton_Previous.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.toolStripButton_Previous.Image = global::ABM_Backup_System.Properties.Resources.previous2;
+            this.toolStripButton_Previous.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton_Previous.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_Previous.Name = "toolStripButton_Previous";
+            this.toolStripButton_Previous.Size = new System.Drawing.Size(50, 61);
+            this.toolStripButton_Previous.Text = "Previous";
+            this.toolStripButton_Previous.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripButton_Previous.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage_CustomerDetails);
@@ -250,14 +267,17 @@
             this.tabPage_CustomerDetails.Size = new System.Drawing.Size(888, 461);
             this.tabPage_CustomerDetails.TabIndex = 0;
             this.tabPage_CustomerDetails.Text = "Customer Details";
+            this.tabPage_CustomerDetails.Click += new System.EventHandler(this.tabPage_CustomerDetails_Click);
             // 
             // comboBox_Country
             // 
+            this.comboBox_Country.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_Country.FormattingEnabled = true;
             this.comboBox_Country.Location = new System.Drawing.Point(582, 366);
             this.comboBox_Country.Name = "comboBox_Country";
             this.comboBox_Country.Size = new System.Drawing.Size(251, 25);
             this.comboBox_Country.TabIndex = 26;
+            this.comboBox_Country.SelectedIndexChanged += new System.EventHandler(this.comboBox_Country_SelectedIndexChanged);
             // 
             // label_Country
             // 
@@ -766,6 +786,18 @@
             this.tabPageAdditionalInformation.TabIndex = 3;
             this.tabPageAdditionalInformation.Text = "Additional Information";
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.AutoSize = false;
+            this.toolStripButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(50, 61);
+            this.toolStripButton1.Text = "Previous";
+            this.toolStripButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
             // formCustomerDatabase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -781,6 +813,7 @@
             this.Padding = new System.Windows.Forms.Padding(9);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customer Database";
+            this.Load += new System.EventHandler(this.formCustomerDatabase_Load);
             this.toolStrip_BottomMenu.ResumeLayout(false);
             this.toolStrip_BottomMenu.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -865,5 +898,7 @@
         private Label label_InvoiceMessageNote;
         private TextBox textBox_SellingScreenNote;
         private Label label_SeelingScreenNote;
+        private ToolStripButton toolStripButton_Previous;
+        private ToolStripButton toolStripButton1;
     }
 }
