@@ -99,10 +99,41 @@ namespace ABM_Backup_System_Library.DataAccess
                 p.Add("@accountsPhoneNumber", model.AccountsPhoneNumber);
                 p.Add("@accountsFaxNumber", model.AccountsFaxNumber);
                 p.Add("@accountsEmailAddress", model.AccountsEmailAddess);
+                p.Add("@accountsMobileNumber", model.AccountsMobileNumber);
+                p.Add("@country", model.Country);
+
 
                 connection.Execute("spAddNewCustomer", p, commandType: CommandType.StoredProcedure);
 
-                MessageBox.Show("New Customer Successfully Added To The Database!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("New Customer Successfully Added To The Database!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                return model;
+            }
+        }
+
+        public CustomerModel GetNextCustomer(CustomerModel model)
+        {
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                var p = new DynamicParameters();
+
+                p.Add("@id", model.ID);
+
+                connection.Query<CustomerModel>("spGetNextCustomer", p, commandType: CommandType.StoredProcedure);
+
+                return model;
+            }
+        }
+
+        public CustomerModel GetIdByAccountNumber(CustomerModel model)
+        {
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                var p = new DynamicParameters();
+
+                p.Add("@accountNumber", model.AccountNumber);
+
+                connection.Execute("spGetIdByAccountNumber", p, commandType: CommandType.StoredProcedure);
 
                 return model;
             }

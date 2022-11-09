@@ -1,15 +1,12 @@
-﻿using ABM_Backup_System_Library.DataAccess;
+﻿using ABM_Backup_System_Library;
+using ABM_Backup_System_Library.DataAccess;
 using ABM_Backup_System_Library.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 using System.Data;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Net;
+using Windows.Devices.Geolocation;
 
 namespace ABM_Backup_System
 {
@@ -18,6 +15,7 @@ namespace ABM_Backup_System
         public formCustomerDatabase()
         {
             InitializeComponent();
+            tabPage_CustomerDetails.Focus();
             textBox_AccountNumber.Focus();
         }
 
@@ -117,7 +115,9 @@ namespace ABM_Backup_System
                 model.AccountsContact = textBox_AccountContact.Text;
                 model.AccountsPhoneNumber = textBox_AccountPhoneNumber.Text;
                 model.AccountsFaxNumber = textBox_AccountFaxNumber.Text;
-                model.AccountsEmailAddess = textBox_AccountEmaillAddress.Text;
+                model.AccountsEmailAddess = textBox_AccountEmailAddress.Text;
+                model.AccountsMobileNumber = textBox_AccountMobileNumber.Text;
+                model.Country = comboBox_Country.Text;
 
                 SqlConnector sqlConnector = new SqlConnector();
                 sqlConnector.AddNewCustomer(model);
@@ -143,10 +143,42 @@ namespace ABM_Backup_System
 
         private void formCustomerDatabase_Load(object sender, EventArgs e)
         {
-            //Populates ComboBox with contries
+            //Get Current Region
+            var DefaultCountry = RegionInfo.CurrentRegion.EnglishName;
+
+            //Populates combobox with list of countries
             var list = CultureInfo.GetCultures(CultureTypes.SpecificCultures).Select(p => new RegionInfo(p.Name).EnglishName).Distinct().OrderBy(s => s).ToList();
             comboBox_Country.DataSource = list;
-            comboBox_Country.Text = "United Kingdom";
+
+            //Defaults combobox to current region
+            comboBox_Country.Text = DefaultCountry;
+        }
+
+        private void toolStripButton_Previous_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton_Next_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnector sqlConnector = new SqlConnector();
+                CustomerModel model = new CustomerModel();
+
+                if (sqlConnector.IsConnection())
+                {
+                    foreach (IDataConnection db in GlobalConfig.Connections)
+                    {
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
         }
     }
 }

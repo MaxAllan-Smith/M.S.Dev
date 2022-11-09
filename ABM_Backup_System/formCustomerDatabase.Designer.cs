@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formCustomerDatabase));
             this.toolStrip_BottomMenu = new System.Windows.Forms.ToolStrip();
             this.toolStripButton_Exit = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -37,13 +38,15 @@
             this.toolStripButton_Cancel = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton_Previous = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton_Next = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage_CustomerDetails = new System.Windows.Forms.TabPage();
             this.comboBox_Country = new System.Windows.Forms.ComboBox();
             this.label_Country = new System.Windows.Forms.Label();
             this.textBox_AccountMobileNumber = new System.Windows.Forms.TextBox();
             this.label_AccountMobileNumber = new System.Windows.Forms.Label();
-            this.textBox_AccountEmaillAddress = new System.Windows.Forms.TextBox();
+            this.textBox_AccountEmailAddress = new System.Windows.Forms.TextBox();
             this.label_AccountEmailAddress = new System.Windows.Forms.Label();
             this.textBox_AccountFaxNumber = new System.Windows.Forms.TextBox();
             this.label_AccountFaxNumber = new System.Windows.Forms.Label();
@@ -98,7 +101,6 @@
             this.textBox_SellingScreenNote = new System.Windows.Forms.TextBox();
             this.label_SeelingScreenNote = new System.Windows.Forms.Label();
             this.tabPageAdditionalInformation = new System.Windows.Forms.TabPage();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip_BottomMenu.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage_CustomerDetails.SuspendLayout();
@@ -120,7 +122,8 @@
             this.toolStripButton_Cancel,
             this.toolStripSeparator4,
             this.toolStripButton_Previous,
-            this.toolStripButton1});
+            this.toolStripButton_Next,
+            this.toolStripSeparator3});
             this.toolStrip_BottomMenu.Location = new System.Drawing.Point(9, 508);
             this.toolStrip_BottomMenu.Name = "toolStrip_BottomMenu";
             this.toolStrip_BottomMenu.Size = new System.Drawing.Size(896, 82);
@@ -209,6 +212,26 @@
             this.toolStripButton_Previous.Text = "Previous";
             this.toolStripButton_Previous.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripButton_Previous.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton_Previous.Click += new System.EventHandler(this.toolStripButton_Previous_Click);
+            // 
+            // toolStripButton_Next
+            // 
+            this.toolStripButton_Next.AutoSize = false;
+            this.toolStripButton_Next.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.toolStripButton_Next.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Next.Image")));
+            this.toolStripButton_Next.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton_Next.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_Next.Name = "toolStripButton_Next";
+            this.toolStripButton_Next.Size = new System.Drawing.Size(50, 61);
+            this.toolStripButton_Next.Text = "Next";
+            this.toolStripButton_Next.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripButton_Next.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton_Next.Click += new System.EventHandler(this.toolStripButton_Next_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 82);
             // 
             // tabControl1
             // 
@@ -223,7 +246,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(896, 499);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.tabControl1.TabIndex = 23;
+            this.tabControl1.TabIndex = 0;
             // 
             // tabPage_CustomerDetails
             // 
@@ -233,7 +256,7 @@
             this.tabPage_CustomerDetails.Controls.Add(this.label_Country);
             this.tabPage_CustomerDetails.Controls.Add(this.textBox_AccountMobileNumber);
             this.tabPage_CustomerDetails.Controls.Add(this.label_AccountMobileNumber);
-            this.tabPage_CustomerDetails.Controls.Add(this.textBox_AccountEmaillAddress);
+            this.tabPage_CustomerDetails.Controls.Add(this.textBox_AccountEmailAddress);
             this.tabPage_CustomerDetails.Controls.Add(this.label_AccountEmailAddress);
             this.tabPage_CustomerDetails.Controls.Add(this.textBox_AccountFaxNumber);
             this.tabPage_CustomerDetails.Controls.Add(this.label_AccountFaxNumber);
@@ -276,7 +299,7 @@
             this.comboBox_Country.Location = new System.Drawing.Point(582, 366);
             this.comboBox_Country.Name = "comboBox_Country";
             this.comboBox_Country.Size = new System.Drawing.Size(251, 25);
-            this.comboBox_Country.TabIndex = 26;
+            this.comboBox_Country.TabIndex = 32;
             this.comboBox_Country.SelectedIndexChanged += new System.EventHandler(this.comboBox_Country_SelectedIndexChanged);
             // 
             // label_Country
@@ -285,7 +308,7 @@
             this.label_Country.Location = new System.Drawing.Point(582, 346);
             this.label_Country.Name = "label_Country";
             this.label_Country.Size = new System.Drawing.Size(61, 17);
-            this.label_Country.TabIndex = 25;
+            this.label_Country.TabIndex = 31;
             this.label_Country.Text = "Country:";
             // 
             // textBox_AccountMobileNumber
@@ -293,7 +316,7 @@
             this.textBox_AccountMobileNumber.Location = new System.Drawing.Point(582, 308);
             this.textBox_AccountMobileNumber.Name = "textBox_AccountMobileNumber";
             this.textBox_AccountMobileNumber.Size = new System.Drawing.Size(251, 25);
-            this.textBox_AccountMobileNumber.TabIndex = 24;
+            this.textBox_AccountMobileNumber.TabIndex = 30;
             // 
             // label_AccountMobileNumber
             // 
@@ -301,15 +324,15 @@
             this.label_AccountMobileNumber.Location = new System.Drawing.Point(582, 288);
             this.label_AccountMobileNumber.Name = "label_AccountMobileNumber";
             this.label_AccountMobileNumber.Size = new System.Drawing.Size(161, 17);
-            this.label_AccountMobileNumber.TabIndex = 23;
+            this.label_AccountMobileNumber.TabIndex = 29;
             this.label_AccountMobileNumber.Text = "Account Mobile Number:";
             // 
-            // textBox_AccountEmaillAddress
+            // textBox_AccountEmailAddress
             // 
-            this.textBox_AccountEmaillAddress.Location = new System.Drawing.Point(582, 250);
-            this.textBox_AccountEmaillAddress.Name = "textBox_AccountEmaillAddress";
-            this.textBox_AccountEmaillAddress.Size = new System.Drawing.Size(251, 25);
-            this.textBox_AccountEmaillAddress.TabIndex = 22;
+            this.textBox_AccountEmailAddress.Location = new System.Drawing.Point(582, 250);
+            this.textBox_AccountEmailAddress.Name = "textBox_AccountEmailAddress";
+            this.textBox_AccountEmailAddress.Size = new System.Drawing.Size(251, 25);
+            this.textBox_AccountEmailAddress.TabIndex = 28;
             // 
             // label_AccountEmailAddress
             // 
@@ -317,7 +340,7 @@
             this.label_AccountEmailAddress.Location = new System.Drawing.Point(582, 230);
             this.label_AccountEmailAddress.Name = "label_AccountEmailAddress";
             this.label_AccountEmailAddress.Size = new System.Drawing.Size(150, 17);
-            this.label_AccountEmailAddress.TabIndex = 21;
+            this.label_AccountEmailAddress.TabIndex = 27;
             this.label_AccountEmailAddress.Text = "Account Email Address:";
             // 
             // textBox_AccountFaxNumber
@@ -325,7 +348,7 @@
             this.textBox_AccountFaxNumber.Location = new System.Drawing.Point(582, 192);
             this.textBox_AccountFaxNumber.Name = "textBox_AccountFaxNumber";
             this.textBox_AccountFaxNumber.Size = new System.Drawing.Size(251, 25);
-            this.textBox_AccountFaxNumber.TabIndex = 20;
+            this.textBox_AccountFaxNumber.TabIndex = 26;
             // 
             // label_AccountFaxNumber
             // 
@@ -333,7 +356,7 @@
             this.label_AccountFaxNumber.Location = new System.Drawing.Point(582, 172);
             this.label_AccountFaxNumber.Name = "label_AccountFaxNumber";
             this.label_AccountFaxNumber.Size = new System.Drawing.Size(141, 17);
-            this.label_AccountFaxNumber.TabIndex = 19;
+            this.label_AccountFaxNumber.TabIndex = 25;
             this.label_AccountFaxNumber.Text = "Account Fax Number:";
             // 
             // textBox_AccountPhoneNumber
@@ -341,7 +364,7 @@
             this.textBox_AccountPhoneNumber.Location = new System.Drawing.Point(582, 134);
             this.textBox_AccountPhoneNumber.Name = "textBox_AccountPhoneNumber";
             this.textBox_AccountPhoneNumber.Size = new System.Drawing.Size(251, 25);
-            this.textBox_AccountPhoneNumber.TabIndex = 18;
+            this.textBox_AccountPhoneNumber.TabIndex = 24;
             // 
             // label_AccountPhoneNumber
             // 
@@ -349,7 +372,7 @@
             this.label_AccountPhoneNumber.Location = new System.Drawing.Point(582, 114);
             this.label_AccountPhoneNumber.Name = "label_AccountPhoneNumber";
             this.label_AccountPhoneNumber.Size = new System.Drawing.Size(159, 17);
-            this.label_AccountPhoneNumber.TabIndex = 17;
+            this.label_AccountPhoneNumber.TabIndex = 23;
             this.label_AccountPhoneNumber.Text = "Account Phone Number:";
             // 
             // textBox_AccountContact
@@ -357,7 +380,7 @@
             this.textBox_AccountContact.Location = new System.Drawing.Point(582, 76);
             this.textBox_AccountContact.Name = "textBox_AccountContact";
             this.textBox_AccountContact.Size = new System.Drawing.Size(251, 25);
-            this.textBox_AccountContact.TabIndex = 16;
+            this.textBox_AccountContact.TabIndex = 22;
             // 
             // label_AccountContact
             // 
@@ -365,7 +388,7 @@
             this.label_AccountContact.Location = new System.Drawing.Point(582, 56);
             this.label_AccountContact.Name = "label_AccountContact";
             this.label_AccountContact.Size = new System.Drawing.Size(112, 17);
-            this.label_AccountContact.TabIndex = 15;
+            this.label_AccountContact.TabIndex = 21;
             this.label_AccountContact.Text = "Account Contact:";
             // 
             // textBox_SalesEmailAddress
@@ -373,7 +396,7 @@
             this.textBox_SalesEmailAddress.Location = new System.Drawing.Point(279, 399);
             this.textBox_SalesEmailAddress.Name = "textBox_SalesEmailAddress";
             this.textBox_SalesEmailAddress.Size = new System.Drawing.Size(222, 25);
-            this.textBox_SalesEmailAddress.TabIndex = 14;
+            this.textBox_SalesEmailAddress.TabIndex = 20;
             // 
             // label_SalesEmailAddress
             // 
@@ -381,7 +404,7 @@
             this.label_SalesEmailAddress.Location = new System.Drawing.Point(279, 379);
             this.label_SalesEmailAddress.Name = "label_SalesEmailAddress";
             this.label_SalesEmailAddress.Size = new System.Drawing.Size(130, 17);
-            this.label_SalesEmailAddress.TabIndex = 13;
+            this.label_SalesEmailAddress.TabIndex = 19;
             this.label_SalesEmailAddress.Text = "Sales Email Address:";
             // 
             // textBox_SalesFaxNumber
@@ -389,7 +412,7 @@
             this.textBox_SalesFaxNumber.Location = new System.Drawing.Point(31, 399);
             this.textBox_SalesFaxNumber.Name = "textBox_SalesFaxNumber";
             this.textBox_SalesFaxNumber.Size = new System.Drawing.Size(222, 25);
-            this.textBox_SalesFaxNumber.TabIndex = 12;
+            this.textBox_SalesFaxNumber.TabIndex = 18;
             // 
             // label_SalesFaxNumber
             // 
@@ -397,7 +420,7 @@
             this.label_SalesFaxNumber.Location = new System.Drawing.Point(31, 379);
             this.label_SalesFaxNumber.Name = "label_SalesFaxNumber";
             this.label_SalesFaxNumber.Size = new System.Drawing.Size(121, 17);
-            this.label_SalesFaxNumber.TabIndex = 11;
+            this.label_SalesFaxNumber.TabIndex = 17;
             this.label_SalesFaxNumber.Text = "Sales Fax Number:";
             // 
             // textBox_SalesPhoneNumber
@@ -405,7 +428,7 @@
             this.textBox_SalesPhoneNumber.Location = new System.Drawing.Point(279, 341);
             this.textBox_SalesPhoneNumber.Name = "textBox_SalesPhoneNumber";
             this.textBox_SalesPhoneNumber.Size = new System.Drawing.Size(222, 25);
-            this.textBox_SalesPhoneNumber.TabIndex = 10;
+            this.textBox_SalesPhoneNumber.TabIndex = 16;
             // 
             // label_SalesPhoneNumber
             // 
@@ -413,7 +436,7 @@
             this.label_SalesPhoneNumber.Location = new System.Drawing.Point(279, 321);
             this.label_SalesPhoneNumber.Name = "label_SalesPhoneNumber";
             this.label_SalesPhoneNumber.Size = new System.Drawing.Size(139, 17);
-            this.label_SalesPhoneNumber.TabIndex = 9;
+            this.label_SalesPhoneNumber.TabIndex = 15;
             this.label_SalesPhoneNumber.Text = "Sales Phone Number:";
             // 
             // textBox_SalesContact
@@ -421,7 +444,7 @@
             this.textBox_SalesContact.Location = new System.Drawing.Point(31, 341);
             this.textBox_SalesContact.Name = "textBox_SalesContact";
             this.textBox_SalesContact.Size = new System.Drawing.Size(222, 25);
-            this.textBox_SalesContact.TabIndex = 8;
+            this.textBox_SalesContact.TabIndex = 14;
             // 
             // label_SalesContact
             // 
@@ -429,7 +452,7 @@
             this.label_SalesContact.Location = new System.Drawing.Point(31, 321);
             this.label_SalesContact.Name = "label_SalesContact";
             this.label_SalesContact.Size = new System.Drawing.Size(92, 17);
-            this.label_SalesContact.TabIndex = 7;
+            this.label_SalesContact.TabIndex = 13;
             this.label_SalesContact.Text = "Sales Contact:";
             // 
             // textBox_AccountPostCode
@@ -438,7 +461,7 @@
             this.textBox_AccountPostCode.Location = new System.Drawing.Point(31, 283);
             this.textBox_AccountPostCode.Name = "textBox_AccountPostCode";
             this.textBox_AccountPostCode.Size = new System.Drawing.Size(148, 25);
-            this.textBox_AccountPostCode.TabIndex = 6;
+            this.textBox_AccountPostCode.TabIndex = 12;
             // 
             // label_AccountPostCode
             // 
@@ -446,7 +469,7 @@
             this.label_AccountPostCode.Location = new System.Drawing.Point(31, 263);
             this.label_AccountPostCode.Name = "label_AccountPostCode";
             this.label_AccountPostCode.Size = new System.Drawing.Size(73, 17);
-            this.label_AccountPostCode.TabIndex = 5;
+            this.label_AccountPostCode.TabIndex = 11;
             this.label_AccountPostCode.Text = "Post Code:";
             // 
             // textBox_CAccountAddress5
@@ -455,7 +478,7 @@
             this.textBox_CAccountAddress5.Location = new System.Drawing.Point(31, 232);
             this.textBox_CAccountAddress5.Name = "textBox_CAccountAddress5";
             this.textBox_CAccountAddress5.Size = new System.Drawing.Size(296, 18);
-            this.textBox_CAccountAddress5.TabIndex = 4;
+            this.textBox_CAccountAddress5.TabIndex = 10;
             // 
             // textBox_CAccountAddress4
             // 
@@ -463,7 +486,7 @@
             this.textBox_CAccountAddress4.Location = new System.Drawing.Point(31, 214);
             this.textBox_CAccountAddress4.Name = "textBox_CAccountAddress4";
             this.textBox_CAccountAddress4.Size = new System.Drawing.Size(296, 18);
-            this.textBox_CAccountAddress4.TabIndex = 3;
+            this.textBox_CAccountAddress4.TabIndex = 9;
             // 
             // label_AccountAddress
             // 
@@ -471,7 +494,7 @@
             this.label_AccountAddress.Location = new System.Drawing.Point(31, 137);
             this.label_AccountAddress.Name = "label_AccountAddress";
             this.label_AccountAddress.Size = new System.Drawing.Size(60, 17);
-            this.label_AccountAddress.TabIndex = 4;
+            this.label_AccountAddress.TabIndex = 5;
             this.label_AccountAddress.Text = "Address:";
             // 
             // textBox_CAccountAddress3
@@ -480,14 +503,14 @@
             this.textBox_CAccountAddress3.Location = new System.Drawing.Point(31, 196);
             this.textBox_CAccountAddress3.Name = "textBox_CAccountAddress3";
             this.textBox_CAccountAddress3.Size = new System.Drawing.Size(296, 18);
-            this.textBox_CAccountAddress3.TabIndex = 2;
+            this.textBox_CAccountAddress3.TabIndex = 8;
             // 
             // textBox_AccountName
             // 
             this.textBox_AccountName.Location = new System.Drawing.Point(31, 99);
             this.textBox_AccountName.Name = "textBox_AccountName";
             this.textBox_AccountName.Size = new System.Drawing.Size(296, 25);
-            this.textBox_AccountName.TabIndex = 3;
+            this.textBox_AccountName.TabIndex = 4;
             // 
             // textBox_CAccountAddress2
             // 
@@ -495,7 +518,7 @@
             this.textBox_CAccountAddress2.Location = new System.Drawing.Point(31, 178);
             this.textBox_CAccountAddress2.Name = "textBox_CAccountAddress2";
             this.textBox_CAccountAddress2.Size = new System.Drawing.Size(296, 18);
-            this.textBox_CAccountAddress2.TabIndex = 1;
+            this.textBox_CAccountAddress2.TabIndex = 7;
             // 
             // label_AccountName
             // 
@@ -503,7 +526,7 @@
             this.label_AccountName.Location = new System.Drawing.Point(31, 79);
             this.label_AccountName.Name = "label_AccountName";
             this.label_AccountName.Size = new System.Drawing.Size(101, 17);
-            this.label_AccountName.TabIndex = 2;
+            this.label_AccountName.TabIndex = 3;
             this.label_AccountName.Text = "Account Name:";
             // 
             // textBox_CAccountAddress1
@@ -512,7 +535,7 @@
             this.textBox_CAccountAddress1.Location = new System.Drawing.Point(31, 160);
             this.textBox_CAccountAddress1.Name = "textBox_CAccountAddress1";
             this.textBox_CAccountAddress1.Size = new System.Drawing.Size(296, 18);
-            this.textBox_CAccountAddress1.TabIndex = 0;
+            this.textBox_CAccountAddress1.TabIndex = 6;
             // 
             // textBox_AccountNumber
             // 
@@ -520,7 +543,7 @@
             this.textBox_AccountNumber.Location = new System.Drawing.Point(31, 41);
             this.textBox_AccountNumber.Name = "textBox_AccountNumber";
             this.textBox_AccountNumber.Size = new System.Drawing.Size(187, 25);
-            this.textBox_AccountNumber.TabIndex = 1;
+            this.textBox_AccountNumber.TabIndex = 2;
             // 
             // label_AccountNumber
             // 
@@ -528,7 +551,7 @@
             this.label_AccountNumber.Location = new System.Drawing.Point(31, 21);
             this.label_AccountNumber.Name = "label_AccountNumber";
             this.label_AccountNumber.Size = new System.Drawing.Size(116, 17);
-            this.label_AccountNumber.TabIndex = 0;
+            this.label_AccountNumber.TabIndex = 1;
             this.label_AccountNumber.Text = "Account Number:";
             // 
             // tabPage_FinancialInformation
@@ -786,18 +809,6 @@
             this.tabPageAdditionalInformation.TabIndex = 3;
             this.tabPageAdditionalInformation.Text = "Additional Information";
             // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.AutoSize = false;
-            this.toolStripButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(50, 61);
-            this.toolStripButton1.Text = "Previous";
-            this.toolStripButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
             // formCustomerDatabase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -864,7 +875,7 @@
         private Label label_SalesFaxNumber;
         private TextBox textBox_AccountMobileNumber;
         private Label label_AccountMobileNumber;
-        private TextBox textBox_AccountEmaillAddress;
+        private TextBox textBox_AccountEmailAddress;
         private Label label_AccountEmailAddress;
         private TextBox textBox_AccountFaxNumber;
         private Label label_AccountFaxNumber;
@@ -899,6 +910,7 @@
         private TextBox textBox_SellingScreenNote;
         private Label label_SeelingScreenNote;
         private ToolStripButton toolStripButton_Previous;
-        private ToolStripButton toolStripButton1;
+        private ToolStripButton toolStripButton_Next;
+        private ToolStripSeparator toolStripSeparator3;
     }
 }

@@ -25,5 +25,22 @@ namespace ABM_Backup_System_Library.Models
         public string AccountsPhoneNumber { get; set; }
         public string AccountsFaxNumber { get; set; }
         public string AccountsEmailAddess { get; set; }
+        public string AccountsMobileNumber { get; set; }
+        public string Country { get; set; }
+
+        public CustomerModel()
+        {
+
+        }
+
+        public CustomerModel(string accountNumber)
+        {
+            AccountNumber = accountNumber;
+        }
+
+        public CustomerModel(int id)
+        {
+            ID = id;
+        }
     }
 }

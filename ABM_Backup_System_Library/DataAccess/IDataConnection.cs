@@ -13,6 +13,7 @@ namespace ABM_Backup_System_Library.DataAccess
         UserModel AddNewUser(UserModel model);
         List<UserModel> UserExist();
         CustomerModel AddNewCustomer(CustomerModel model);
-
+        CustomerModel GetNextCustomer(CustomerModel model);
+        CustomerModel GetIdByAccountNumber(CustomerModel model);
     }
 }
