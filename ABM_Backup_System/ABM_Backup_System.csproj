@@ -39,4 +39,8 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <SourceGeneratorInput Remove="formProductDatabase.cs" />
+  </ItemGroup>
+
 </Project>

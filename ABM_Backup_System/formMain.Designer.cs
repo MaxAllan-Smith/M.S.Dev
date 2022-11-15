@@ -57,12 +57,12 @@
             this.customerDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.supplierDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+            this.systemConfigurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutBackupSystemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutBackupSystemToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
-            this.systemConfigurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -276,6 +276,18 @@
             this.productDatabaseToolStripMenuItem.Name = "productDatabaseToolStripMenuItem";
             this.productDatabaseToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.productDatabaseToolStripMenuItem.Text = "Product Database";
+            this.productDatabaseToolStripMenuItem.Click += new System.EventHandler(this.productDatabaseToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator10
+            // 
+            this.toolStripSeparator10.Name = "toolStripSeparator10";
+            this.toolStripSeparator10.Size = new System.Drawing.Size(186, 6);
+            // 
+            // systemConfigurationToolStripMenuItem
+            // 
+            this.systemConfigurationToolStripMenuItem.Name = "systemConfigurationToolStripMenuItem";
+            this.systemConfigurationToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.systemConfigurationToolStripMenuItem.Text = "System Configuration";
             // 
             // helpToolStripMenuItem
             // 
@@ -303,17 +315,6 @@
             this.aboutBackupSystemToolStripMenuItem1.Name = "aboutBackupSystemToolStripMenuItem1";
             this.aboutBackupSystemToolStripMenuItem1.Size = new System.Drawing.Size(190, 22);
             this.aboutBackupSystemToolStripMenuItem1.Text = "About Backup System";
-            // 
-            // toolStripSeparator10
-            // 
-            this.toolStripSeparator10.Name = "toolStripSeparator10";
-            this.toolStripSeparator10.Size = new System.Drawing.Size(186, 6);
-            // 
-            // systemConfigurationToolStripMenuItem
-            // 
-            this.systemConfigurationToolStripMenuItem.Name = "systemConfigurationToolStripMenuItem";
-            this.systemConfigurationToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.systemConfigurationToolStripMenuItem.Text = "System Configuration";
             // 
             // formMain
             // 

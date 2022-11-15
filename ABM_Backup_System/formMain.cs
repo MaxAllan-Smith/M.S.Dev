@@ -134,5 +134,19 @@ namespace ABM_Backup_System
                 throw;
             }
         }
+
+        private void productDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                formProductDatabase formProductDatabase = new formProductDatabase();
+                formProductDatabase.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+        }
     }
 }
