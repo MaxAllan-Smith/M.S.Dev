@@ -15,5 +15,6 @@ namespace ABM_Backup_System_Library.DataAccess
         CustomerModel AddNewCustomer(CustomerModel model);
         CustomerModel GetNextCustomer(CustomerModel model);
         CustomerModel GetIdByAccountNumber(CustomerModel model);
+        ProductModel GetAltProduct(ProductModel model);
     }
 }

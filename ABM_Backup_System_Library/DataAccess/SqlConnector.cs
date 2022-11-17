@@ -138,5 +138,19 @@ namespace ABM_Backup_System_Library.DataAccess
                 return model;
             }
         }
+
+        public ProductModel GetAltProduct(ProductModel model)
+        {
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                var p = new DynamicParameters();
+
+                p.Add("@knownAs", model.KnownAs);
+
+                connection.Execute("spGetAltProduct", p, commandType: CommandType.StoredProcedure);
+
+                return model;
+            }
+        }
     }
 }

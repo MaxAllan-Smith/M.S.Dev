@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formProductDatabase));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip_BottomMenu = new System.Windows.Forms.ToolStrip();
             this.toolStripButton_Exit = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -78,8 +82,14 @@
             this.textBox_PartNumber = new System.Windows.Forms.TextBox();
             this.label_PartNumber = new System.Windows.Forms.Label();
             this.tabPage_Alternatives = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label_Alt_Alternative = new System.Windows.Forms.Label();
+            this.dataGridView_Alternatives = new System.Windows.Forms.DataGridView();
+            this.Column_Lno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_PartNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1_Supplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1_SupplierPartNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_RRP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox_Alt_CostPrice = new System.Windows.Forms.TextBox();
             this.label_Alt_CostPrice = new System.Windows.Forms.Label();
             this.textBox_Alt_SupplierPartNumber = new System.Windows.Forms.TextBox();
@@ -91,6 +101,8 @@
             this.textBox_Alt_PartNumber = new System.Windows.Forms.TextBox();
             this.label_Alt_PartNumber = new System.Windows.Forms.Label();
             this.tabPage_SuppliersCostPrices = new System.Windows.Forms.TabPage();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -102,8 +114,7 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tabPage_SellingPrices = new System.Windows.Forms.TabPage();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -114,16 +125,15 @@
             this.label10 = new System.Windows.Forms.Label();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.toolStrip_BottomMenu.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage_PartNumber.SuspendLayout();
             this.groupBox_Dimensions.SuspendLayout();
             this.tabPage_Alternatives.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Alternatives)).BeginInit();
             this.tabPage_SuppliersCostPrices.SuspendLayout();
-            this.tabPage_SellingPrices.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.tabPage_SellingPrices.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -145,7 +155,7 @@
             this.toolStripSeparator3});
             this.toolStrip_BottomMenu.Location = new System.Drawing.Point(9, 529);
             this.toolStrip_BottomMenu.Name = "toolStrip_BottomMenu";
-            this.toolStrip_BottomMenu.Size = new System.Drawing.Size(896, 82);
+            this.toolStrip_BottomMenu.Size = new System.Drawing.Size(975, 82);
             this.toolStrip_BottomMenu.TabIndex = 23;
             this.toolStrip_BottomMenu.Text = "toolStrip1";
             // 
@@ -254,11 +264,11 @@
             this.tabControl1.Controls.Add(this.tabPage_SuppliersCostPrices);
             this.tabControl1.Controls.Add(this.tabPage_SellingPrices);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.ItemSize = new System.Drawing.Size(223, 30);
+            this.tabControl1.ItemSize = new System.Drawing.Size(243, 30);
             this.tabControl1.Location = new System.Drawing.Point(9, 9);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(896, 520);
+            this.tabControl1.Size = new System.Drawing.Size(975, 520);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 24;
             // 
@@ -298,7 +308,7 @@
             this.tabPage_PartNumber.Location = new System.Drawing.Point(4, 34);
             this.tabPage_PartNumber.Name = "tabPage_PartNumber";
             this.tabPage_PartNumber.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_PartNumber.Size = new System.Drawing.Size(888, 482);
+            this.tabPage_PartNumber.Size = new System.Drawing.Size(967, 482);
             this.tabPage_PartNumber.TabIndex = 0;
             this.tabPage_PartNumber.Text = "Part Number";
             // 
@@ -338,7 +348,7 @@
             // 
             this.comboBox_BranchName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_BranchName.FormattingEnabled = true;
-            this.comboBox_BranchName.Location = new System.Drawing.Point(586, 265);
+            this.comboBox_BranchName.Location = new System.Drawing.Point(659, 265);
             this.comboBox_BranchName.Name = "comboBox_BranchName";
             this.comboBox_BranchName.Size = new System.Drawing.Size(275, 25);
             this.comboBox_BranchName.TabIndex = 24;
@@ -346,7 +356,7 @@
             // label_BranchName
             // 
             this.label_BranchName.AutoSize = true;
-            this.label_BranchName.Location = new System.Drawing.Point(586, 245);
+            this.label_BranchName.Location = new System.Drawing.Point(659, 245);
             this.label_BranchName.Name = "label_BranchName";
             this.label_BranchName.Size = new System.Drawing.Size(93, 17);
             this.label_BranchName.TabIndex = 23;
@@ -360,7 +370,7 @@
             this.groupBox_Dimensions.Controls.Add(this.label_Depth);
             this.groupBox_Dimensions.Controls.Add(this.textBox_Width);
             this.groupBox_Dimensions.Controls.Add(this.label_Width);
-            this.groupBox_Dimensions.Location = new System.Drawing.Point(586, 132);
+            this.groupBox_Dimensions.Location = new System.Drawing.Point(659, 132);
             this.groupBox_Dimensions.Name = "groupBox_Dimensions";
             this.groupBox_Dimensions.Size = new System.Drawing.Size(275, 96);
             this.groupBox_Dimensions.TabIndex = 22;
@@ -417,7 +427,7 @@
             // 
             // textBox_BarCode
             // 
-            this.textBox_BarCode.Location = new System.Drawing.Point(586, 91);
+            this.textBox_BarCode.Location = new System.Drawing.Point(659, 91);
             this.textBox_BarCode.Name = "textBox_BarCode";
             this.textBox_BarCode.Size = new System.Drawing.Size(275, 25);
             this.textBox_BarCode.TabIndex = 21;
@@ -425,7 +435,7 @@
             // label_BarCode
             // 
             this.label_BarCode.AutoSize = true;
-            this.label_BarCode.Location = new System.Drawing.Point(586, 71);
+            this.label_BarCode.Location = new System.Drawing.Point(659, 71);
             this.label_BarCode.Name = "label_BarCode";
             this.label_BarCode.Size = new System.Drawing.Size(66, 17);
             this.label_BarCode.TabIndex = 20;
@@ -597,8 +607,7 @@
             // tabPage_Alternatives
             // 
             this.tabPage_Alternatives.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage_Alternatives.Controls.Add(this.dataGridView1);
-            this.tabPage_Alternatives.Controls.Add(this.label_Alt_Alternative);
+            this.tabPage_Alternatives.Controls.Add(this.dataGridView_Alternatives);
             this.tabPage_Alternatives.Controls.Add(this.textBox_Alt_CostPrice);
             this.tabPage_Alternatives.Controls.Add(this.label_Alt_CostPrice);
             this.tabPage_Alternatives.Controls.Add(this.textBox_Alt_SupplierPartNumber);
@@ -612,33 +621,119 @@
             this.tabPage_Alternatives.Location = new System.Drawing.Point(4, 34);
             this.tabPage_Alternatives.Name = "tabPage_Alternatives";
             this.tabPage_Alternatives.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_Alternatives.Size = new System.Drawing.Size(888, 482);
+            this.tabPage_Alternatives.Size = new System.Drawing.Size(967, 482);
             this.tabPage_Alternatives.TabIndex = 1;
             this.tabPage_Alternatives.Text = "Alternatives";
             // 
-            // dataGridView1
+            // dataGridView_Alternatives
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(28, 86);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(830, 380);
-            this.dataGridView1.TabIndex = 11;
+            this.dataGridView_Alternatives.AllowUserToResizeColumns = false;
+            this.dataGridView_Alternatives.AllowUserToResizeRows = false;
+            this.dataGridView_Alternatives.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_Alternatives.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView_Alternatives.ColumnHeadersHeight = 25;
+            this.dataGridView_Alternatives.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridView_Alternatives.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column_Lno,
+            this.Column_PartNumber,
+            this.Column_Description,
+            this.Column1_Supplier,
+            this.Column1_SupplierPartNumber,
+            this.Column_RRP,
+            this.Column_Cost});
+            this.dataGridView_Alternatives.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView_Alternatives.Location = new System.Drawing.Point(3, 76);
+            this.dataGridView_Alternatives.MultiSelect = false;
+            this.dataGridView_Alternatives.Name = "dataGridView_Alternatives";
+            this.dataGridView_Alternatives.RowHeadersVisible = false;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dataGridView_Alternatives.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView_Alternatives.RowTemplate.Height = 25;
+            this.dataGridView_Alternatives.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_Alternatives.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dataGridView_Alternatives.Size = new System.Drawing.Size(961, 403);
+            this.dataGridView_Alternatives.TabIndex = 11;
+            this.dataGridView_Alternatives.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridView_Alternatives_DefaultValuesNeeded);
+            this.dataGridView_Alternatives.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView_Alternatives_EditingControlShowing);
+            this.dataGridView_Alternatives.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView_Alternatives_KeyDown);
             // 
-            // label_Alt_Alternative
+            // Column_Lno
             // 
-            this.label_Alt_Alternative.AutoSize = true;
-            this.label_Alt_Alternative.Location = new System.Drawing.Point(28, 66);
-            this.label_Alt_Alternative.Name = "label_Alt_Alternative";
-            this.label_Alt_Alternative.Size = new System.Drawing.Size(83, 17);
-            this.label_Alt_Alternative.TabIndex = 10;
-            this.label_Alt_Alternative.Text = "Alternatives:";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.NullValue = null;
+            this.Column_Lno.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column_Lno.HeaderText = "Lno";
+            this.Column_Lno.Name = "Column_Lno";
+            this.Column_Lno.ReadOnly = true;
+            this.Column_Lno.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column_Lno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column_Lno.Width = 40;
+            // 
+            // Column_PartNumber
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Column_PartNumber.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column_PartNumber.HeaderText = "Part Number";
+            this.Column_PartNumber.Name = "Column_PartNumber";
+            this.Column_PartNumber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column_PartNumber.Width = 200;
+            // 
+            // Column_Description
+            // 
+            this.Column_Description.HeaderText = "Description";
+            this.Column_Description.Name = "Column_Description";
+            this.Column_Description.ReadOnly = true;
+            this.Column_Description.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column_Description.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column_Description.Width = 275;
+            // 
+            // Column1_Supplier
+            // 
+            this.Column1_Supplier.HeaderText = "Supplier";
+            this.Column1_Supplier.Name = "Column1_Supplier";
+            this.Column1_Supplier.ReadOnly = true;
+            this.Column1_Supplier.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column1_Supplier.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column1_Supplier.Width = 70;
+            // 
+            // Column1_SupplierPartNumber
+            // 
+            this.Column1_SupplierPartNumber.HeaderText = "Supplier Part Number";
+            this.Column1_SupplierPartNumber.Name = "Column1_SupplierPartNumber";
+            this.Column1_SupplierPartNumber.ReadOnly = true;
+            this.Column1_SupplierPartNumber.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column1_SupplierPartNumber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column1_SupplierPartNumber.Width = 173;
+            // 
+            // Column_RRP
+            // 
+            this.Column_RRP.HeaderText = "RRP";
+            this.Column_RRP.Name = "Column_RRP";
+            this.Column_RRP.ReadOnly = true;
+            this.Column_RRP.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column_RRP.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column_Cost
+            // 
+            this.Column_Cost.HeaderText = "Cost";
+            this.Column_Cost.Name = "Column_Cost";
+            this.Column_Cost.ReadOnly = true;
+            this.Column_Cost.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column_Cost.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // textBox_Alt_CostPrice
             // 
             this.textBox_Alt_CostPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_Alt_CostPrice.Enabled = false;
-            this.textBox_Alt_CostPrice.Location = new System.Drawing.Point(758, 31);
+            this.textBox_Alt_CostPrice.Location = new System.Drawing.Point(801, 34);
             this.textBox_Alt_CostPrice.Name = "textBox_Alt_CostPrice";
             this.textBox_Alt_CostPrice.Size = new System.Drawing.Size(100, 25);
             this.textBox_Alt_CostPrice.TabIndex = 9;
@@ -646,7 +741,7 @@
             // label_Alt_CostPrice
             // 
             this.label_Alt_CostPrice.AutoSize = true;
-            this.label_Alt_CostPrice.Location = new System.Drawing.Point(758, 11);
+            this.label_Alt_CostPrice.Location = new System.Drawing.Point(801, 14);
             this.label_Alt_CostPrice.Name = "label_Alt_CostPrice";
             this.label_Alt_CostPrice.Size = new System.Drawing.Size(71, 17);
             this.label_Alt_CostPrice.TabIndex = 8;
@@ -656,7 +751,7 @@
             // 
             this.textBox_Alt_SupplierPartNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_Alt_SupplierPartNumber.Enabled = false;
-            this.textBox_Alt_SupplierPartNumber.Location = new System.Drawing.Point(555, 31);
+            this.textBox_Alt_SupplierPartNumber.Location = new System.Drawing.Point(598, 34);
             this.textBox_Alt_SupplierPartNumber.Name = "textBox_Alt_SupplierPartNumber";
             this.textBox_Alt_SupplierPartNumber.Size = new System.Drawing.Size(197, 25);
             this.textBox_Alt_SupplierPartNumber.TabIndex = 7;
@@ -664,7 +759,7 @@
             // label_Alt_SupplierPartNumber
             // 
             this.label_Alt_SupplierPartNumber.AutoSize = true;
-            this.label_Alt_SupplierPartNumber.Location = new System.Drawing.Point(555, 11);
+            this.label_Alt_SupplierPartNumber.Location = new System.Drawing.Point(598, 14);
             this.label_Alt_SupplierPartNumber.Name = "label_Alt_SupplierPartNumber";
             this.label_Alt_SupplierPartNumber.Size = new System.Drawing.Size(144, 17);
             this.label_Alt_SupplierPartNumber.TabIndex = 6;
@@ -674,7 +769,7 @@
             // 
             this.textBox_Alt_Supplier.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_Alt_Supplier.Enabled = false;
-            this.textBox_Alt_Supplier.Location = new System.Drawing.Point(464, 31);
+            this.textBox_Alt_Supplier.Location = new System.Drawing.Point(507, 34);
             this.textBox_Alt_Supplier.Name = "textBox_Alt_Supplier";
             this.textBox_Alt_Supplier.Size = new System.Drawing.Size(85, 25);
             this.textBox_Alt_Supplier.TabIndex = 5;
@@ -682,7 +777,7 @@
             // label_Alt_Supplier
             // 
             this.label_Alt_Supplier.AutoSize = true;
-            this.label_Alt_Supplier.Location = new System.Drawing.Point(464, 11);
+            this.label_Alt_Supplier.Location = new System.Drawing.Point(507, 14);
             this.label_Alt_Supplier.Name = "label_Alt_Supplier";
             this.label_Alt_Supplier.Size = new System.Drawing.Size(61, 17);
             this.label_Alt_Supplier.TabIndex = 4;
@@ -692,7 +787,7 @@
             // 
             this.textBox_Alt_Description.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_Alt_Description.Enabled = false;
-            this.textBox_Alt_Description.Location = new System.Drawing.Point(231, 31);
+            this.textBox_Alt_Description.Location = new System.Drawing.Point(274, 34);
             this.textBox_Alt_Description.Name = "textBox_Alt_Description";
             this.textBox_Alt_Description.Size = new System.Drawing.Size(227, 25);
             this.textBox_Alt_Description.TabIndex = 3;
@@ -700,7 +795,7 @@
             // label_Alt_Description
             // 
             this.label_Alt_Description.AutoSize = true;
-            this.label_Alt_Description.Location = new System.Drawing.Point(231, 11);
+            this.label_Alt_Description.Location = new System.Drawing.Point(274, 14);
             this.label_Alt_Description.Name = "label_Alt_Description";
             this.label_Alt_Description.Size = new System.Drawing.Size(79, 17);
             this.label_Alt_Description.TabIndex = 2;
@@ -710,7 +805,7 @@
             // 
             this.textBox_Alt_PartNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_Alt_PartNumber.Enabled = false;
-            this.textBox_Alt_PartNumber.Location = new System.Drawing.Point(28, 31);
+            this.textBox_Alt_PartNumber.Location = new System.Drawing.Point(71, 34);
             this.textBox_Alt_PartNumber.Name = "textBox_Alt_PartNumber";
             this.textBox_Alt_PartNumber.Size = new System.Drawing.Size(197, 25);
             this.textBox_Alt_PartNumber.TabIndex = 1;
@@ -718,7 +813,7 @@
             // label_Alt_PartNumber
             // 
             this.label_Alt_PartNumber.AutoSize = true;
-            this.label_Alt_PartNumber.Location = new System.Drawing.Point(28, 11);
+            this.label_Alt_PartNumber.Location = new System.Drawing.Point(71, 14);
             this.label_Alt_PartNumber.Name = "label_Alt_PartNumber";
             this.label_Alt_PartNumber.Size = new System.Drawing.Size(91, 17);
             this.label_Alt_PartNumber.TabIndex = 0;
@@ -742,9 +837,27 @@
             this.tabPage_SuppliersCostPrices.Location = new System.Drawing.Point(4, 34);
             this.tabPage_SuppliersCostPrices.Name = "tabPage_SuppliersCostPrices";
             this.tabPage_SuppliersCostPrices.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_SuppliersCostPrices.Size = new System.Drawing.Size(888, 482);
+            this.tabPage_SuppliersCostPrices.Size = new System.Drawing.Size(967, 482);
             this.tabPage_SuppliersCostPrices.TabIndex = 2;
             this.tabPage_SuppliersCostPrices.Text = "Suppliers Cost Prices";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 65);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 25;
+            this.dataGridView2.Size = new System.Drawing.Size(961, 414);
+            this.dataGridView2.TabIndex = 21;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(28, 70);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(0, 17);
+            this.label6.TabIndex = 20;
             // 
             // textBox1
             // 
@@ -853,26 +966,19 @@
             this.tabPage_SellingPrices.Location = new System.Drawing.Point(4, 34);
             this.tabPage_SellingPrices.Name = "tabPage_SellingPrices";
             this.tabPage_SellingPrices.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_SellingPrices.Size = new System.Drawing.Size(888, 482);
+            this.tabPage_SellingPrices.Size = new System.Drawing.Size(967, 482);
             this.tabPage_SellingPrices.TabIndex = 3;
             this.tabPage_SellingPrices.Text = "Selling Prices";
             // 
-            // label6
+            // dataGridView3
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(28, 70);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 17);
-            this.label6.TabIndex = 20;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 62);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(876, 414);
-            this.dataGridView2.TabIndex = 21;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView3.Location = new System.Drawing.Point(3, 65);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowTemplate.Height = 25;
+            this.dataGridView3.Size = new System.Drawing.Size(961, 414);
+            this.dataGridView3.TabIndex = 30;
             // 
             // textBox6
             // 
@@ -964,20 +1070,11 @@
             this.label11.TabIndex = 20;
             this.label11.Text = "Part Number:";
             // 
-            // dataGridView3
-            // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(6, 62);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowTemplate.Height = 25;
-            this.dataGridView3.Size = new System.Drawing.Size(876, 414);
-            this.dataGridView3.TabIndex = 30;
-            // 
             // formProductDatabase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 620);
+            this.ClientSize = new System.Drawing.Size(993, 620);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.toolStrip_BottomMenu);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -988,6 +1085,7 @@
             this.Padding = new System.Windows.Forms.Padding(9);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Product Database";
+            this.Load += new System.EventHandler(this.formProductDatabase_Load);
             this.toolStrip_BottomMenu.ResumeLayout(false);
             this.toolStrip_BottomMenu.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -997,12 +1095,12 @@
             this.groupBox_Dimensions.PerformLayout();
             this.tabPage_Alternatives.ResumeLayout(false);
             this.tabPage_Alternatives.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Alternatives)).EndInit();
             this.tabPage_SuppliersCostPrices.ResumeLayout(false);
             this.tabPage_SuppliersCostPrices.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage_SellingPrices.ResumeLayout(false);
             this.tabPage_SellingPrices.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
 
@@ -1062,8 +1160,7 @@
         private Label label_UnitOfIssue;
         private TextBox textBox_Alt_PartNumber;
         private Label label_Alt_PartNumber;
-        private DataGridView dataGridView1;
-        private Label label_Alt_Alternative;
+        private DataGridView dataGridView_Alternatives;
         private TextBox textBox_Alt_CostPrice;
         private Label label_Alt_CostPrice;
         private TextBox textBox_Alt_SupplierPartNumber;
@@ -1095,5 +1192,12 @@
         private Label label10;
         private TextBox textBox10;
         private Label label11;
+        private DataGridViewTextBoxColumn Column_Lno;
+        private DataGridViewTextBoxColumn Column_PartNumber;
+        private DataGridViewTextBoxColumn Column_Description;
+        private DataGridViewTextBoxColumn Column1_Supplier;
+        private DataGridViewTextBoxColumn Column1_SupplierPartNumber;
+        private DataGridViewTextBoxColumn Column_RRP;
+        private DataGridViewTextBoxColumn Column_Cost;
     }
 }
