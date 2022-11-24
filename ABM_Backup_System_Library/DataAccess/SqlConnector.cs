@@ -145,9 +145,9 @@ namespace ABM_Backup_System_Library.DataAccess
             {
                 var p = new DynamicParameters();
 
-                p.Add("@knownAs", model.KnownAs);
+                p.Add("@partNumber", model.PartNumber);
 
-                connection.Execute("spGetAltProduct", p, commandType: CommandType.StoredProcedure);
+                connection.Execute("TEST_spGetAltProduct", p, commandType: CommandType.StoredProcedure);
 
                 return model;
             }

@@ -31,5 +31,14 @@ namespace ABM_Backup_System_Library.Models
         public float RRP { get; set; }
         public float CostPrice { get; set; }
 
+        public ProductModel()
+        {
+
+        }
+
+        public ProductModel(string partNumber)
+        {
+            PartNumber = partNumber;
+        }
     }
 }

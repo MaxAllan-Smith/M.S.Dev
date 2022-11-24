@@ -663,6 +663,7 @@
             this.dataGridView_Alternatives.TabIndex = 11;
             this.dataGridView_Alternatives.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridView_Alternatives_DefaultValuesNeeded);
             this.dataGridView_Alternatives.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView_Alternatives_EditingControlShowing);
+            this.dataGridView_Alternatives.SelectionChanged += new System.EventHandler(this.dataGridView_Alternatives_SelectionChanged);
             this.dataGridView_Alternatives.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView_Alternatives_KeyDown);
             // 
             // Column_Lno

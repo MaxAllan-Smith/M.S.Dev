@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ABM_Backup_System_Library.DataAccess;
+using ABM_Backup_System_Library.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,16 +29,15 @@ namespace ABM_Backup_System
 
         private void formProductDatabase_Load(object sender, EventArgs e)
         {
-            dataGridView_Alternatives.MultiSelect = false;
-            dataGridView_Alternatives.ClearSelection();
-            dataGridView_Alternatives.Rows[0].Cells[1].Selected = true;
+
         }
 
         private void dataGridView_Alternatives_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Tab && dataGridView_Alternatives.CurrentCell.ColumnIndex == 1)
+            if (e.KeyCode == Keys.Tab)
             {
-                MessageBox.Show("Yes");
+                dataGridView_Alternatives.CurrentCell = dataGridView_Alternatives.Rows[0].Cells[0];
+                dataGridView_Alternatives.BeginEdit(true);
             }
         }
 
@@ -49,6 +50,11 @@ namespace ABM_Backup_System
                     ((TextBox)e.Control).CharacterCasing = CharacterCasing.Upper;
                 }
             }
+        }
+
+        private void dataGridView_Alternatives_SelectionChanged(object sender, EventArgs e)
+        {
+            dataGridView_Alternatives.CurrentCell = null;
         }
     }
 }
