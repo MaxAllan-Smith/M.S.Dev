@@ -139,7 +139,7 @@ namespace ABM_Backup_System_Library.DataAccess
             }
         }
 
-        public ProductModel GetAltProduct(ProductModel model)
+        public List<ProductModel> GetProducts(ProductModel model)
         {
             using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
             {
@@ -147,7 +147,47 @@ namespace ABM_Backup_System_Library.DataAccess
 
                 p.Add("@partNumber", model.PartNumber);
 
-                connection.Execute("TEST_spGetAltProduct", p, commandType: CommandType.StoredProcedure);
+                var result = connection.Query<ProductModel>("spGetProductByPartNumber", p, commandType: CommandType.StoredProcedure).ToList();
+
+                return result;
+            }
+        }
+
+        public List<BranchModel> GetBranches(BranchModel model)
+        {
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                var result = connection.Query<BranchModel>("spGetBranches", commandType: CommandType.StoredProcedure).ToList();
+
+                return result;
+            }
+        }
+
+        public ProductModel AddNewProduct(ProductModel model)
+        {
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                var p = new DynamicParameters();
+
+                p.Add("@partNumber", model.PartNumber);
+                p.Add("@knownAs", model.KnownAs);
+                p.Add("@description", model.Description);
+                p.Add("@productGroupPrefix", model.ProdGroupPrefix);
+                p.Add("@binLocation", model.BinLocation);
+                p.Add("@rangeCode", model.RangeCode);
+                p.Add("@uoi", model.UOI);
+                p.Add("@minStock", model.MinStock);
+                p.Add("@maxStock", model.MaxStock);
+                p.Add("@dateSetup", model.DateSetup);
+                p.Add("@barCode", model.BarCode);
+                p.Add("@branchName", model.BranchName);
+                p.Add("@width", model.Width);
+                p.Add("@depth", model.Depth);
+                p.Add("@length", model.Length);
+
+                connection.Execute("spAddNewProduct", p, commandType: CommandType.StoredProcedure);
+
+                MessageBox.Show($"Part Number: '{model.PartNumber}'\n Was Successfully Added To The Database!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 return model;
             }

@@ -44,7 +44,7 @@
             this.toolStripButton_Previous = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton_Next = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabControl_ProductDatabase = new System.Windows.Forms.TabControl();
             this.tabPage_PartNumber = new System.Windows.Forms.TabPage();
             this.textBox_PN_UnitOfIssue = new System.Windows.Forms.TextBox();
             this.label_UnitOfIssue = new System.Windows.Forms.Label();
@@ -126,7 +126,7 @@
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.toolStrip_BottomMenu.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.tabControl_ProductDatabase.SuspendLayout();
             this.tabPage_PartNumber.SuspendLayout();
             this.groupBox_Dimensions.SuspendLayout();
             this.tabPage_Alternatives.SuspendLayout();
@@ -204,9 +204,10 @@
             this.toolStripButton_OK.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton_OK.Name = "toolStripButton_OK";
             this.toolStripButton_OK.Size = new System.Drawing.Size(50, 61);
-            this.toolStripButton_OK.Text = "OK";
+            this.toolStripButton_OK.Text = "Chrome";
             this.toolStripButton_OK.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripButton_OK.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton_OK.Click += new System.EventHandler(this.toolStripButton_OK_Click);
             // 
             // toolStripButton_Cancel
             // 
@@ -257,20 +258,21 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 82);
             // 
-            // tabControl1
+            // tabControl_ProductDatabase
             // 
-            this.tabControl1.Controls.Add(this.tabPage_PartNumber);
-            this.tabControl1.Controls.Add(this.tabPage_Alternatives);
-            this.tabControl1.Controls.Add(this.tabPage_SuppliersCostPrices);
-            this.tabControl1.Controls.Add(this.tabPage_SellingPrices);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.ItemSize = new System.Drawing.Size(243, 30);
-            this.tabControl1.Location = new System.Drawing.Point(9, 9);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(975, 520);
-            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.tabControl1.TabIndex = 24;
+            this.tabControl_ProductDatabase.Controls.Add(this.tabPage_PartNumber);
+            this.tabControl_ProductDatabase.Controls.Add(this.tabPage_Alternatives);
+            this.tabControl_ProductDatabase.Controls.Add(this.tabPage_SuppliersCostPrices);
+            this.tabControl_ProductDatabase.Controls.Add(this.tabPage_SellingPrices);
+            this.tabControl_ProductDatabase.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl_ProductDatabase.ItemSize = new System.Drawing.Size(243, 30);
+            this.tabControl_ProductDatabase.Location = new System.Drawing.Point(9, 9);
+            this.tabControl_ProductDatabase.Name = "tabControl_ProductDatabase";
+            this.tabControl_ProductDatabase.SelectedIndex = 0;
+            this.tabControl_ProductDatabase.Size = new System.Drawing.Size(975, 520);
+            this.tabControl_ProductDatabase.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.tabControl_ProductDatabase.TabIndex = 0;
+            this.tabControl_ProductDatabase.SelectedIndexChanged += new System.EventHandler(this.tabControl_ProductDatabase_SelectedIndexChanged);
             // 
             // tabPage_PartNumber
             // 
@@ -317,7 +319,7 @@
             this.textBox_PN_UnitOfIssue.Location = new System.Drawing.Point(206, 266);
             this.textBox_PN_UnitOfIssue.Name = "textBox_PN_UnitOfIssue";
             this.textBox_PN_UnitOfIssue.Size = new System.Drawing.Size(101, 25);
-            this.textBox_PN_UnitOfIssue.TabIndex = 28;
+            this.textBox_PN_UnitOfIssue.TabIndex = 13;
             // 
             // label_UnitOfIssue
             // 
@@ -325,15 +327,16 @@
             this.label_UnitOfIssue.Location = new System.Drawing.Point(206, 246);
             this.label_UnitOfIssue.Name = "label_UnitOfIssue";
             this.label_UnitOfIssue.Size = new System.Drawing.Size(89, 17);
-            this.label_UnitOfIssue.TabIndex = 27;
+            this.label_UnitOfIssue.TabIndex = 12;
             this.label_UnitOfIssue.Text = "Unit Of Issue:";
             // 
             // textBox_PN_BinLocation
             // 
+            this.textBox_PN_BinLocation.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox_PN_BinLocation.Location = new System.Drawing.Point(206, 208);
             this.textBox_PN_BinLocation.Name = "textBox_PN_BinLocation";
             this.textBox_PN_BinLocation.Size = new System.Drawing.Size(101, 25);
-            this.textBox_PN_BinLocation.TabIndex = 26;
+            this.textBox_PN_BinLocation.TabIndex = 9;
             // 
             // label_BinLocation
             // 
@@ -341,7 +344,7 @@
             this.label_BinLocation.Location = new System.Drawing.Point(206, 188);
             this.label_BinLocation.Name = "label_BinLocation";
             this.label_BinLocation.Size = new System.Drawing.Size(85, 17);
-            this.label_BinLocation.TabIndex = 25;
+            this.label_BinLocation.TabIndex = 8;
             this.label_BinLocation.Text = "Bin Location:";
             // 
             // comboBox_BranchName
@@ -351,7 +354,7 @@
             this.comboBox_BranchName.Location = new System.Drawing.Point(659, 265);
             this.comboBox_BranchName.Name = "comboBox_BranchName";
             this.comboBox_BranchName.Size = new System.Drawing.Size(275, 25);
-            this.comboBox_BranchName.TabIndex = 24;
+            this.comboBox_BranchName.TabIndex = 30;
             // 
             // label_BranchName
             // 
@@ -359,7 +362,7 @@
             this.label_BranchName.Location = new System.Drawing.Point(659, 245);
             this.label_BranchName.Name = "label_BranchName";
             this.label_BranchName.Size = new System.Drawing.Size(93, 17);
-            this.label_BranchName.TabIndex = 23;
+            this.label_BranchName.TabIndex = 29;
             this.label_BranchName.Text = "Branch Name:";
             // 
             // groupBox_Dimensions
@@ -382,7 +385,7 @@
             this.textBox_Length.Location = new System.Drawing.Point(196, 48);
             this.textBox_Length.Name = "textBox_Length";
             this.textBox_Length.Size = new System.Drawing.Size(63, 25);
-            this.textBox_Length.TabIndex = 5;
+            this.textBox_Length.TabIndex = 28;
             // 
             // label_Length
             // 
@@ -390,7 +393,7 @@
             this.label_Length.Location = new System.Drawing.Point(202, 28);
             this.label_Length.Name = "label_Length";
             this.label_Length.Size = new System.Drawing.Size(50, 17);
-            this.label_Length.TabIndex = 4;
+            this.label_Length.TabIndex = 27;
             this.label_Length.Text = "Length";
             // 
             // textBox_Depth
@@ -398,7 +401,7 @@
             this.textBox_Depth.Location = new System.Drawing.Point(103, 48);
             this.textBox_Depth.Name = "textBox_Depth";
             this.textBox_Depth.Size = new System.Drawing.Size(63, 25);
-            this.textBox_Depth.TabIndex = 3;
+            this.textBox_Depth.TabIndex = 26;
             // 
             // label_Depth
             // 
@@ -406,7 +409,7 @@
             this.label_Depth.Location = new System.Drawing.Point(111, 28);
             this.label_Depth.Name = "label_Depth";
             this.label_Depth.Size = new System.Drawing.Size(45, 17);
-            this.label_Depth.TabIndex = 2;
+            this.label_Depth.TabIndex = 25;
             this.label_Depth.Text = "Depth";
             // 
             // textBox_Width
@@ -414,7 +417,7 @@
             this.textBox_Width.Location = new System.Drawing.Point(13, 48);
             this.textBox_Width.Name = "textBox_Width";
             this.textBox_Width.Size = new System.Drawing.Size(63, 25);
-            this.textBox_Width.TabIndex = 1;
+            this.textBox_Width.TabIndex = 24;
             // 
             // label_Width
             // 
@@ -422,7 +425,7 @@
             this.label_Width.Location = new System.Drawing.Point(21, 28);
             this.label_Width.Name = "label_Width";
             this.label_Width.Size = new System.Drawing.Size(45, 17);
-            this.label_Width.TabIndex = 0;
+            this.label_Width.TabIndex = 23;
             this.label_Width.Text = "Width";
             // 
             // textBox_BarCode
@@ -443,6 +446,7 @@
             // 
             // textBox_FreeStock
             // 
+            this.textBox_FreeStock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_FreeStock.Enabled = false;
             this.textBox_FreeStock.Location = new System.Drawing.Point(28, 439);
             this.textBox_FreeStock.Name = "textBox_FreeStock";
@@ -460,11 +464,12 @@
             // 
             // textBox_LastSold
             // 
+            this.textBox_LastSold.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_LastSold.Enabled = false;
             this.textBox_LastSold.Location = new System.Drawing.Point(451, 33);
             this.textBox_LastSold.Name = "textBox_LastSold";
             this.textBox_LastSold.Size = new System.Drawing.Size(121, 25);
-            this.textBox_LastSold.TabIndex = 17;
+            this.textBox_LastSold.TabIndex = 34;
             // 
             // label_LastSold
             // 
@@ -472,15 +477,16 @@
             this.label_LastSold.Location = new System.Drawing.Point(451, 13);
             this.label_LastSold.Name = "label_LastSold";
             this.label_LastSold.Size = new System.Drawing.Size(65, 17);
-            this.label_LastSold.TabIndex = 16;
+            this.label_LastSold.TabIndex = 33;
             this.label_LastSold.Text = "Last Sold:";
             // 
             // textBox_MaximumStock
             // 
+            this.textBox_MaximumStock.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox_MaximumStock.Location = new System.Drawing.Point(28, 381);
             this.textBox_MaximumStock.Name = "textBox_MaximumStock";
             this.textBox_MaximumStock.Size = new System.Drawing.Size(72, 25);
-            this.textBox_MaximumStock.TabIndex = 15;
+            this.textBox_MaximumStock.TabIndex = 17;
             // 
             // label_MaximumStock
             // 
@@ -488,15 +494,16 @@
             this.label_MaximumStock.Location = new System.Drawing.Point(28, 361);
             this.label_MaximumStock.Name = "label_MaximumStock";
             this.label_MaximumStock.Size = new System.Drawing.Size(110, 17);
-            this.label_MaximumStock.TabIndex = 14;
+            this.label_MaximumStock.TabIndex = 16;
             this.label_MaximumStock.Text = "Maximum Stock:";
             // 
             // textBox_MinimumStock
             // 
+            this.textBox_MinimumStock.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox_MinimumStock.Location = new System.Drawing.Point(28, 323);
             this.textBox_MinimumStock.Name = "textBox_MinimumStock";
             this.textBox_MinimumStock.Size = new System.Drawing.Size(72, 25);
-            this.textBox_MinimumStock.TabIndex = 13;
+            this.textBox_MinimumStock.TabIndex = 15;
             // 
             // label_MinimumStock
             // 
@@ -504,16 +511,17 @@
             this.label_MinimumStock.Location = new System.Drawing.Point(28, 303);
             this.label_MinimumStock.Name = "label_MinimumStock";
             this.label_MinimumStock.Size = new System.Drawing.Size(107, 17);
-            this.label_MinimumStock.TabIndex = 12;
+            this.label_MinimumStock.TabIndex = 14;
             this.label_MinimumStock.Text = "Minimum Stock:";
             // 
             // textBox_DateSetup
             // 
+            this.textBox_DateSetup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_DateSetup.Enabled = false;
             this.textBox_DateSetup.Location = new System.Drawing.Point(314, 33);
             this.textBox_DateSetup.Name = "textBox_DateSetup";
             this.textBox_DateSetup.Size = new System.Drawing.Size(121, 25);
-            this.textBox_DateSetup.TabIndex = 11;
+            this.textBox_DateSetup.TabIndex = 32;
             // 
             // label_DateSetup
             // 
@@ -521,15 +529,16 @@
             this.label_DateSetup.Location = new System.Drawing.Point(314, 13);
             this.label_DateSetup.Name = "label_DateSetup";
             this.label_DateSetup.Size = new System.Drawing.Size(78, 17);
-            this.label_DateSetup.TabIndex = 10;
+            this.label_DateSetup.TabIndex = 31;
             this.label_DateSetup.Text = "Date Setup:";
             // 
             // textBox_RangeCode
             // 
+            this.textBox_RangeCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox_RangeCode.Location = new System.Drawing.Point(28, 265);
             this.textBox_RangeCode.Name = "textBox_RangeCode";
             this.textBox_RangeCode.Size = new System.Drawing.Size(110, 25);
-            this.textBox_RangeCode.TabIndex = 9;
+            this.textBox_RangeCode.TabIndex = 11;
             // 
             // label_RangeCode
             // 
@@ -537,7 +546,7 @@
             this.label_RangeCode.Location = new System.Drawing.Point(28, 245);
             this.label_RangeCode.Name = "label_RangeCode";
             this.label_RangeCode.Size = new System.Drawing.Size(84, 17);
-            this.label_RangeCode.TabIndex = 8;
+            this.label_RangeCode.TabIndex = 10;
             this.label_RangeCode.Text = "Range Code:";
             // 
             // textBox_Description
@@ -545,7 +554,7 @@
             this.textBox_Description.Location = new System.Drawing.Point(28, 149);
             this.textBox_Description.Name = "textBox_Description";
             this.textBox_Description.Size = new System.Drawing.Size(488, 25);
-            this.textBox_Description.TabIndex = 7;
+            this.textBox_Description.TabIndex = 5;
             // 
             // label_Description
             // 
@@ -553,15 +562,16 @@
             this.label_Description.Location = new System.Drawing.Point(28, 129);
             this.label_Description.Name = "label_Description";
             this.label_Description.Size = new System.Drawing.Size(79, 17);
-            this.label_Description.TabIndex = 6;
+            this.label_Description.TabIndex = 4;
             this.label_Description.Text = "Description:";
             // 
             // textBox_ProductGroup
             // 
+            this.textBox_ProductGroup.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox_ProductGroup.Location = new System.Drawing.Point(28, 207);
             this.textBox_ProductGroup.Name = "textBox_ProductGroup";
             this.textBox_ProductGroup.Size = new System.Drawing.Size(110, 25);
-            this.textBox_ProductGroup.TabIndex = 5;
+            this.textBox_ProductGroup.TabIndex = 7;
             // 
             // label_ProductGroup
             // 
@@ -569,11 +579,12 @@
             this.label_ProductGroup.Location = new System.Drawing.Point(28, 187);
             this.label_ProductGroup.Name = "label_ProductGroup";
             this.label_ProductGroup.Size = new System.Drawing.Size(101, 17);
-            this.label_ProductGroup.TabIndex = 4;
+            this.label_ProductGroup.TabIndex = 6;
             this.label_ProductGroup.Text = "Product Group:";
             // 
             // textBox_KnownAs
             // 
+            this.textBox_KnownAs.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox_KnownAs.Location = new System.Drawing.Point(28, 91);
             this.textBox_KnownAs.Name = "textBox_KnownAs";
             this.textBox_KnownAs.Size = new System.Drawing.Size(190, 25);
@@ -590,10 +601,13 @@
             // 
             // textBox_PartNumber
             // 
+            this.textBox_PartNumber.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox_PartNumber.Location = new System.Drawing.Point(28, 33);
             this.textBox_PartNumber.Name = "textBox_PartNumber";
             this.textBox_PartNumber.Size = new System.Drawing.Size(263, 25);
             this.textBox_PartNumber.TabIndex = 1;
+            this.textBox_PartNumber.Leave += new System.EventHandler(this.textBox_PartNumber_Leave);
+            this.textBox_PartNumber.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.textBox_PartNumber_PreviewKeyDown);
             // 
             // label_PartNumber
             // 
@@ -661,10 +675,6 @@
             this.dataGridView_Alternatives.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView_Alternatives.Size = new System.Drawing.Size(961, 403);
             this.dataGridView_Alternatives.TabIndex = 11;
-            this.dataGridView_Alternatives.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridView_Alternatives_DefaultValuesNeeded);
-            this.dataGridView_Alternatives.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView_Alternatives_EditingControlShowing);
-            this.dataGridView_Alternatives.SelectionChanged += new System.EventHandler(this.dataGridView_Alternatives_SelectionChanged);
-            this.dataGridView_Alternatives.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView_Alternatives_KeyDown);
             // 
             // Column_Lno
             // 
@@ -1076,7 +1086,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(993, 620);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabControl_ProductDatabase);
             this.Controls.Add(this.toolStrip_BottomMenu);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -1089,7 +1099,7 @@
             this.Load += new System.EventHandler(this.formProductDatabase_Load);
             this.toolStrip_BottomMenu.ResumeLayout(false);
             this.toolStrip_BottomMenu.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
+            this.tabControl_ProductDatabase.ResumeLayout(false);
             this.tabPage_PartNumber.ResumeLayout(false);
             this.tabPage_PartNumber.PerformLayout();
             this.groupBox_Dimensions.ResumeLayout(false);
@@ -1119,7 +1129,7 @@
         private ToolStripButton toolStripButton_Previous;
         private ToolStripButton toolStripButton_Next;
         private ToolStripSeparator toolStripSeparator3;
-        private TabControl tabControl1;
+        private TabControl tabControl_ProductDatabase;
         private TabPage tabPage_PartNumber;
         private TabPage tabPage_Alternatives;
         private TabPage tabPage_SuppliersCostPrices;
