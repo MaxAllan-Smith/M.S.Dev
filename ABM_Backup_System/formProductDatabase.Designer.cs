@@ -204,7 +204,7 @@
             this.toolStripButton_OK.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton_OK.Name = "toolStripButton_OK";
             this.toolStripButton_OK.Size = new System.Drawing.Size(50, 61);
-            this.toolStripButton_OK.Text = "Chrome";
+            this.toolStripButton_OK.Text = "OK";
             this.toolStripButton_OK.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripButton_OK.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton_OK.Click += new System.EventHandler(this.toolStripButton_OK_Click);
@@ -386,6 +386,7 @@
             this.textBox_Length.Name = "textBox_Length";
             this.textBox_Length.Size = new System.Drawing.Size(63, 25);
             this.textBox_Length.TabIndex = 28;
+            this.textBox_Length.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label_Length
             // 
@@ -402,6 +403,7 @@
             this.textBox_Depth.Name = "textBox_Depth";
             this.textBox_Depth.Size = new System.Drawing.Size(63, 25);
             this.textBox_Depth.TabIndex = 26;
+            this.textBox_Depth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label_Depth
             // 
@@ -418,6 +420,7 @@
             this.textBox_Width.Name = "textBox_Width";
             this.textBox_Width.Size = new System.Drawing.Size(63, 25);
             this.textBox_Width.TabIndex = 24;
+            this.textBox_Width.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label_Width
             // 

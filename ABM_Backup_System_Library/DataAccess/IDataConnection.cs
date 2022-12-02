@@ -18,6 +18,9 @@ namespace ABM_Backup_System_Library.DataAccess
         List<ProductModel> GetProducts(ProductModel model);
         List<BranchModel> GetBranches(BranchModel model);
         ProductModel AddNewProduct(ProductModel model);
+        List<ProductGoupModel> GetProductGroupID(ProductGoupModel model);
+        List<RangeCodeModel> GetRangeCodeID(RangeCodeModel model);
+        List<BranchModel> GetBranchNameID(BranchModel model);
 
     }
 }

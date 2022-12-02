@@ -20,5 +20,14 @@ namespace ABM_Backup_System_Library.Models
         public string Telephone { get; set; }
         public string Fax { get; set; }
 
+        public BranchModel()
+        {
+
+        }
+
+        public BranchModel(string branchName)
+        {
+            BranchName = branchName;
+        }
     }
 }

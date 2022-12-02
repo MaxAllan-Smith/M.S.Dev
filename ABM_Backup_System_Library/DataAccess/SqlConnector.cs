@@ -172,15 +172,15 @@ namespace ABM_Backup_System_Library.DataAccess
                 p.Add("@partNumber", model.PartNumber);
                 p.Add("@knownAs", model.KnownAs);
                 p.Add("@description", model.Description);
-                p.Add("@productGroupPrefix", model.ProdGroupPrefix);
+                p.Add("@productGroupPrefix", model.ProdGroupID);
                 p.Add("@binLocation", model.BinLocation);
-                p.Add("@rangeCode", model.RangeCode);
+                p.Add("@rangeCode", model.RangeCodeID);
                 p.Add("@uoi", model.UOI);
                 p.Add("@minStock", model.MinStock);
                 p.Add("@maxStock", model.MaxStock);
                 p.Add("@dateSetup", model.DateSetup);
                 p.Add("@barCode", model.BarCode);
-                p.Add("@branchName", model.BranchName);
+                p.Add("@branchName", model.RangeCodeID);
                 p.Add("@width", model.Width);
                 p.Add("@depth", model.Depth);
                 p.Add("@length", model.Length);
@@ -190,6 +190,48 @@ namespace ABM_Backup_System_Library.DataAccess
                 MessageBox.Show($"Part Number: '{model.PartNumber}'\n Was Successfully Added To The Database!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 return model;
+            }
+        }
+
+        public List<ProductGoupModel> GetProductGroupID(ProductGoupModel model)
+        {
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                var p = new DynamicParameters();
+
+                p.Add("@productGroupPrefix", model.ProdGroupPrefix);
+
+                var result = connection.Query<ProductGoupModel>("spGetProductGroupID", p, commandType: CommandType.StoredProcedure).ToList();
+
+                return result;
+            }
+        }
+
+        public List<RangeCodeModel> GetRangeCodeID(RangeCodeModel model)
+        {
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                var p = new DynamicParameters();
+
+                p.Add("@rangeCode", model.RangeCode);
+
+                var result = connection.Query<RangeCodeModel>("spGetRangeCodeID", p, commandType: CommandType.StoredProcedure).ToList();
+
+                return result;
+            }
+        }
+
+        public List<BranchModel> GetBranchNameID(BranchModel model)
+        {
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                var p = new DynamicParameters();
+
+                p.Add("@branchName", model.BranchName);
+
+                var result = connection.Query<BranchModel>("spGetBranchNameID", p, commandType: CommandType.StoredProcedure).ToList();
+
+                return result;
             }
         }
     }

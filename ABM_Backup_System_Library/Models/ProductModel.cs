@@ -21,10 +21,10 @@ namespace ABM_Backup_System_Library.Models
         public float Width { get; set; }
         public float Depth { get; set; }
         public float Length { get; set; }
-        public string ProdGroupPrefix { get; set; }
-        public string RangeCode { get; set; }
+        public string ProdGroupID { get; set; }
+        public string RangeCodeID { get; set; }
         public int SupplierID { get; set; }
-        public string BranchName { get; set; }
+        public string BranchID { get; set; }
         public int CompanyID { get; set; }
         public int LastSoldID { get; set; }
         public string SupplierPartNumber { get; set; }
