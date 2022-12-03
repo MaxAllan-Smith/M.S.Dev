@@ -63,6 +63,8 @@
             this.aboutBackupSystemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutBackupSystemToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+            this.generalCodesFileMantenanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -253,7 +255,9 @@
             this.supplierDatabaseToolStripMenuItem,
             this.productDatabaseToolStripMenuItem,
             this.toolStripSeparator10,
-            this.systemConfigurationToolStripMenuItem});
+            this.systemConfigurationToolStripMenuItem,
+            this.toolStripSeparator11,
+            this.generalCodesFileMantenanceToolStripMenuItem});
             this.databaseToolStripMenuItem.Name = "databaseToolStripMenuItem";
             this.databaseToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.databaseToolStripMenuItem.Text = "Database";
@@ -261,32 +265,32 @@
             // customerDatabaseToolStripMenuItem
             // 
             this.customerDatabaseToolStripMenuItem.Name = "customerDatabaseToolStripMenuItem";
-            this.customerDatabaseToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.customerDatabaseToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.customerDatabaseToolStripMenuItem.Text = "Customer Database";
             this.customerDatabaseToolStripMenuItem.Click += new System.EventHandler(this.customerDatabaseToolStripMenuItem_Click);
             // 
             // supplierDatabaseToolStripMenuItem
             // 
             this.supplierDatabaseToolStripMenuItem.Name = "supplierDatabaseToolStripMenuItem";
-            this.supplierDatabaseToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.supplierDatabaseToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.supplierDatabaseToolStripMenuItem.Text = "Supplier Database";
             // 
             // productDatabaseToolStripMenuItem
             // 
             this.productDatabaseToolStripMenuItem.Name = "productDatabaseToolStripMenuItem";
-            this.productDatabaseToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.productDatabaseToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.productDatabaseToolStripMenuItem.Text = "Product Database";
             this.productDatabaseToolStripMenuItem.Click += new System.EventHandler(this.productDatabaseToolStripMenuItem_Click);
             // 
             // toolStripSeparator10
             // 
             this.toolStripSeparator10.Name = "toolStripSeparator10";
-            this.toolStripSeparator10.Size = new System.Drawing.Size(186, 6);
+            this.toolStripSeparator10.Size = new System.Drawing.Size(237, 6);
             // 
             // systemConfigurationToolStripMenuItem
             // 
             this.systemConfigurationToolStripMenuItem.Name = "systemConfigurationToolStripMenuItem";
-            this.systemConfigurationToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.systemConfigurationToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.systemConfigurationToolStripMenuItem.Text = "System Configuration";
             // 
             // helpToolStripMenuItem
@@ -315,6 +319,18 @@
             this.aboutBackupSystemToolStripMenuItem1.Name = "aboutBackupSystemToolStripMenuItem1";
             this.aboutBackupSystemToolStripMenuItem1.Size = new System.Drawing.Size(190, 22);
             this.aboutBackupSystemToolStripMenuItem1.Text = "About Backup System";
+            // 
+            // toolStripSeparator11
+            // 
+            this.toolStripSeparator11.Name = "toolStripSeparator11";
+            this.toolStripSeparator11.Size = new System.Drawing.Size(237, 6);
+            // 
+            // generalCodesFileMantenanceToolStripMenuItem
+            // 
+            this.generalCodesFileMantenanceToolStripMenuItem.Name = "generalCodesFileMantenanceToolStripMenuItem";
+            this.generalCodesFileMantenanceToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
+            this.generalCodesFileMantenanceToolStripMenuItem.Text = "General Codes File Mantenance";
+            this.generalCodesFileMantenanceToolStripMenuItem.Click += new System.EventHandler(this.generalCodesFileMantenanceToolStripMenuItem_Click);
             // 
             // formMain
             // 
@@ -372,5 +388,7 @@
         private ToolStripSeparator toolStripSeparator9;
         private ToolStripSeparator toolStripSeparator10;
         private ToolStripMenuItem systemConfigurationToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator11;
+        private ToolStripMenuItem generalCodesFileMantenanceToolStripMenuItem;
     }
 }

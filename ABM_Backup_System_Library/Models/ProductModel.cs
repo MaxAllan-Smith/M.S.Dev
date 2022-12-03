@@ -11,7 +11,7 @@ namespace ABM_Backup_System_Library.Models
         public int ID { get; set; }
         public string PartNumber { get; set; }
         public string KnownAs { get; set; }
-        public string Description { get; set; }
+        public string ProductDescription { get; set; }
         public string BinLocation { get; set; }
         public int UOI { get; set; }
         public int MinStock { get; set; }

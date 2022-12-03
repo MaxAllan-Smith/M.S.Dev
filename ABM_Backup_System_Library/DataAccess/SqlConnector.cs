@@ -171,7 +171,7 @@ namespace ABM_Backup_System_Library.DataAccess
 
                 p.Add("@partNumber", model.PartNumber);
                 p.Add("@knownAs", model.KnownAs);
-                p.Add("@description", model.Description);
+                p.Add("@description", model.ProductDescription);
                 p.Add("@productGroupPrefix", model.ProdGroupID);
                 p.Add("@binLocation", model.BinLocation);
                 p.Add("@rangeCode", model.RangeCodeID);

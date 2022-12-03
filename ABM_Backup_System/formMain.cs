@@ -148,5 +148,19 @@ namespace ABM_Backup_System
                 throw;
             }
         }
+
+        private void generalCodesFileMantenanceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                formGeneralCodesFileMaintenance formGeneralCodesFileMaintenance = new formGeneralCodesFileMaintenance();
+                formGeneralCodesFileMaintenance.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+        }
     }
 }

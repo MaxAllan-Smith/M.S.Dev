@@ -125,6 +125,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.labelProductGroupName = new System.Windows.Forms.Label();
+            this.labelRangeCodeDescription = new System.Windows.Forms.Label();
             this.toolStrip_BottomMenu.SuspendLayout();
             this.tabControl_ProductDatabase.SuspendLayout();
             this.tabPage_PartNumber.SuspendLayout();
@@ -278,6 +280,8 @@
             // 
             this.tabPage_PartNumber.BackColor = System.Drawing.SystemColors.Control;
             this.tabPage_PartNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPage_PartNumber.Controls.Add(this.labelRangeCodeDescription);
+            this.tabPage_PartNumber.Controls.Add(this.labelProductGroupName);
             this.tabPage_PartNumber.Controls.Add(this.textBox_PN_UnitOfIssue);
             this.tabPage_PartNumber.Controls.Add(this.label_UnitOfIssue);
             this.tabPage_PartNumber.Controls.Add(this.textBox_PN_BinLocation);
@@ -316,7 +320,7 @@
             // 
             // textBox_PN_UnitOfIssue
             // 
-            this.textBox_PN_UnitOfIssue.Location = new System.Drawing.Point(206, 266);
+            this.textBox_PN_UnitOfIssue.Location = new System.Drawing.Point(314, 265);
             this.textBox_PN_UnitOfIssue.Name = "textBox_PN_UnitOfIssue";
             this.textBox_PN_UnitOfIssue.Size = new System.Drawing.Size(101, 25);
             this.textBox_PN_UnitOfIssue.TabIndex = 13;
@@ -324,7 +328,7 @@
             // label_UnitOfIssue
             // 
             this.label_UnitOfIssue.AutoSize = true;
-            this.label_UnitOfIssue.Location = new System.Drawing.Point(206, 246);
+            this.label_UnitOfIssue.Location = new System.Drawing.Point(314, 245);
             this.label_UnitOfIssue.Name = "label_UnitOfIssue";
             this.label_UnitOfIssue.Size = new System.Drawing.Size(89, 17);
             this.label_UnitOfIssue.TabIndex = 12;
@@ -333,7 +337,7 @@
             // textBox_PN_BinLocation
             // 
             this.textBox_PN_BinLocation.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox_PN_BinLocation.Location = new System.Drawing.Point(206, 208);
+            this.textBox_PN_BinLocation.Location = new System.Drawing.Point(314, 207);
             this.textBox_PN_BinLocation.Name = "textBox_PN_BinLocation";
             this.textBox_PN_BinLocation.Size = new System.Drawing.Size(101, 25);
             this.textBox_PN_BinLocation.TabIndex = 9;
@@ -341,7 +345,7 @@
             // label_BinLocation
             // 
             this.label_BinLocation.AutoSize = true;
-            this.label_BinLocation.Location = new System.Drawing.Point(206, 188);
+            this.label_BinLocation.Location = new System.Drawing.Point(314, 187);
             this.label_BinLocation.Name = "label_BinLocation";
             this.label_BinLocation.Size = new System.Drawing.Size(85, 17);
             this.label_BinLocation.TabIndex = 8;
@@ -1084,6 +1088,28 @@
             this.label11.TabIndex = 20;
             this.label11.Text = "Part Number:";
             // 
+            // labelProductGroupName
+            // 
+            this.labelProductGroupName.AutoSize = true;
+            this.labelProductGroupName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.labelProductGroupName.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.labelProductGroupName.Location = new System.Drawing.Point(144, 212);
+            this.labelProductGroupName.Name = "labelProductGroupName";
+            this.labelProductGroupName.Size = new System.Drawing.Size(137, 15);
+            this.labelProductGroupName.TabIndex = 35;
+            this.labelProductGroupName.Text = "labelProductGroupName";
+            // 
+            // labelRangeCodeDescription
+            // 
+            this.labelRangeCodeDescription.AutoSize = true;
+            this.labelRangeCodeDescription.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.labelRangeCodeDescription.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.labelRangeCodeDescription.Location = new System.Drawing.Point(144, 270);
+            this.labelRangeCodeDescription.Name = "labelRangeCodeDescription";
+            this.labelRangeCodeDescription.Size = new System.Drawing.Size(153, 15);
+            this.labelRangeCodeDescription.TabIndex = 36;
+            this.labelRangeCodeDescription.Text = "labelRangeCodeDescription";
+            // 
             // formProductDatabase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -1213,5 +1239,7 @@
         private DataGridViewTextBoxColumn Column1_SupplierPartNumber;
         private DataGridViewTextBoxColumn Column_RRP;
         private DataGridViewTextBoxColumn Column_Cost;
+        private Label labelRangeCodeDescription;
+        private Label labelProductGroupName;
     }
 }

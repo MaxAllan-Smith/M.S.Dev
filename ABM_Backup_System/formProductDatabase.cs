@@ -71,6 +71,9 @@ namespace ABM_Backup_System
                 var result = sqlConnector.GetBranches(branchModel);
                 comboBox_BranchName.Items.Add(result[0].BranchName);
 
+                labelProductGroupName.Text = "";
+                labelRangeCodeDescription.Text = "";
+
             }
             catch (Exception ex)
             {
@@ -111,7 +114,7 @@ namespace ABM_Backup_System
                     {
                         textBox_PartNumber.Text = result[0].PartNumber;
                         textBox_KnownAs.Text = result[0].KnownAs;
-                        textBox_Description.Text = result[0].Description;
+                        textBox_Description.Text = result[0].ProductDescription;
                         textBox_ProductGroup.Text = result[0].ProdGroupID;
                         textBox_RangeCode.Text = result[0].RangeCodeID;
                         textBox_PN_BinLocation.Text = result[0].BinLocation;
@@ -160,7 +163,7 @@ namespace ABM_Backup_System
                     {
                         PartNumber = textBox_PartNumber.Text,
                         KnownAs = textBox_KnownAs.Text,
-                        Description = textBox_Description.Text,
+                        ProductDescription = textBox_Description.Text,
                         BinLocation = textBox_PN_BinLocation.Text,
                         UOI = Int32.Parse(textBox_PN_UnitOfIssue.Text),
                         MinStock = Int32.Parse(textBox_MinimumStock.Text),
