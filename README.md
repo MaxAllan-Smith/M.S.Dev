@@ -44,8 +44,4 @@ We welcome contributions from the community! If you're interested in improving T
 
 Please read our contributing guidelines for more information on how to contribute effectively.
 
-## License
-
-TradeMaster Pro is licensed under [SPECIFY LICENSE], which means [BRIEF DESCRIPTION OF LICENSE TERMS].
-
 For more information, please visit our [official website](#) or contact our support team.
